@@ -1,30 +1,33 @@
-<!DOCTYPE html>
 <html>
 <div id="header"></div>
+
 <body>
     <div class="m-5">
-        <form action="#" method="POST" class="form-horizontal">
+        <form action="index.html" method="POST" class="form-horizontal">
             <div class="form-group">
                 <h3>Creazione Annuncio</h3>
                 <div class="col-sm-6">
-                    <input type="text" name="title" id="listing-title" class="form-control my-2" placeholder="titolo annuncio" required>
+                    <input type="text" name="title" id="listing-title" class="form-control my-2"
+                        placeholder="titolo annuncio" required>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" name="description" id="listing-description" class="form-control my-2" placeholder="descrizione" required>
+                    <input type="text" name="description" id="listing-description" class="form-control my-2"
+                        placeholder="descrizione" required>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" name="price" id="listing-price" class="form-control my-2" placeholder="prezzo" required>
+                    <input type="text" name="price" id="listing-price" class="form-control my-2" placeholder="prezzo"
+                        required>
                 </div>
-                <!-- <input name="username" value="<?php echo session('username');?>"hidden> -->
             </div>
-               <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fa fa-plus"></i> Crea Annuncio
-                    </button>
-                </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-plus"></i> Crea Annuncio
+                </button>
+            </div>
         </form>
     </div>
 </body>
 <div id="footer"></div>
 <script src="..\..\templates\user_template.js"></script>
+
 </html>
