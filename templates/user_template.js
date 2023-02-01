@@ -1,10 +1,12 @@
 //Extension to convert (html->string) (string-> html) https://marketplace.visualstudio.com/items?itemName=weber87na.htmltostring
 
 //html at page start
-document.getElementById("header").insertAdjacentHTML("afterbegin",
+document.getElementById("header").innerHTML =
     '<head>'
     + '<script src="../../vendor/bootstrap/bootstrap.js"></script>'
     + '<link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css">'
+    + '<link rel="stylesheet" href="../../vendor/fontawesome/css/fontawesome.css">'
+    + '<link rel="stylesheet" href="../../vendor/fontawesome/css/all.css">'
     + '</head>'
     + '<nav class="navbar bg-light">'
     + '<a class="navbar-brand" href="index.html">'
@@ -26,10 +28,10 @@ document.getElementById("header").insertAdjacentHTML("afterbegin",
     + '</form>'
     + '</div>'
     + '</nav>'
-);
+;
 //html at page end
-document.documentElement.insertAdjacentHTML("beforeend",
+document.getElementById("footer").innerHTML =
     '<footer class="bg-light p-3">'
     + '<text>developers: <a href="https://twitter.com/il_ricci0">@il_ricci0</a> on twitter.</text>'
     + '</footer>'
-);
+;
