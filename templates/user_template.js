@@ -15,7 +15,7 @@ document.getElementById("header").insertAdjacentHTML("afterbegin",
     + '<button class="btn btn-primary" type="submit">Cerca</button>'
     + '</form>'
     + '<div class="d-flex">'
-    + '<form method="GET" action="#" class="navbar-item form-inline">'
+    + '<form method="GET" action="create_listing.html" class="navbar-item form-inline">'
     + '<button class="btn btn-outline-success" type="submit">Crea Annuncio</button>'
     + '</form>'
     + '<form method="GET" action="#" class="navbar-item form-inline">'
