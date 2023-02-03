@@ -2,6 +2,7 @@
 
 <head>
     <script type="text/javascript" src="../../vendor/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 
@@ -12,54 +13,91 @@
         <div class="row">
             <div class="col bg-secondary">
                 <div class="sticky-top">
-                    FILTER.
+                    fILTER.
                     <div class="card m-3 rounded-4 d-flex align-items-center">
-                        <div class="list-group m-3" style="width:320px">
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="../../resurces/vsr.svg" width="25px" height="25px">
+                        <div class="list-group m-3" id="categories">
+                            <h5 class="text-muted">categorie:</h5>
+                            <div>
+                                <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list" href=""
+                                    id="fucili-bolt-action" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="../../resurces/vsr.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>
+                                            fucili bolt action
+                                        </text>
                                     </div>
-                                    <text>
-                                        Fucili bolt action
-                                    </text>
+                                </a>
+                                <div class="subcategory ms-4" name="fucili-bolt-action" hidden>
+                                    <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list" href="">
+                                        <div class="d-flex align-items-center">
+                                            <div class="circle me-3">
+                                                <img src="../../resurces/vsr.svg" width="25px" height="25px">
+                                            </div>
+                                            <text>
+                                                sottocategoria
+                                            </text>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="">
+                            </div>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                id="fucili-elettrici" onclick="expandOrCollapseCategory(this)">
                                 <div class="d-flex align-items-center">
                                     <div class="circle me-3">
                                         <img src="../../resurces/ak47.svg" width="25px" height="25px">
                                     </div>
-                                    <text>Fucili elettrici</text>
+                                    <text>fucili elettrici</text>
                                 </div>
                             </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="">
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="" id="fucili-gas-scarrellanti" onclick="expandOrCollapseCategory(this)">
                                 <div class="d-flex align-items-center">
                                     <div class="circle me-3">
                                         <img src="../../resurces/aug.svg" width="25px" height="25px">
                                     </div>
                                     <text>
-                                        Fucili a gas scarrellanti
+                                        fucili a gas scarrellanti
                                     </text>
                                 </div>
                             </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="">
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="" id="fucili-pompa" onclick="expandOrCollapseCategory(this)">
                                 <div class="d-flex align-items-center">
                                     <div class="circle me-3">
                                         <img src="../../resurces/model1897.svg" width="25px" height="25px">
                                     </div>
                                     <text>
-                                        Fucili a pompa
+                                        fucili a pompa
                                     </text>
                                 </div>
                             </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="">
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="" id="fucili-radio" onclick="expandOrCollapseCategory(this)">
                                 <div class="d-flex align-items-center">
                                     <div class="circle me-3">
                                         <img src="../../resurces/radio.svg" width="25px" height="25px">
                                     </div>
                                     <text>
                                         radio
+                                    </text>
+                                </div>
+                            </a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href="" id="fucili-abbigliamento" onclick="expandOrCollapseCategory(this)">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-3">
+                                        <img src="../../resurces/soldier.svg" width="25px" height="25px">
+                                    </div>
+                                    <text>
+                                        abbigliamento
+                                    </text>
+                                </div>
+                            </a>
+                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""  id="sistemi-puntamento" onclick="expandOrCollapseCategory(this)">
+                                <div class="d-flex align-items-center">
+                                    <div class="circle me-3">
+                                        <img src="../../resurces/scope.svg" width="25px" height="25px">
+                                    </div>
+                                    <text>
+                                        sistemi di puntamento
                                     </text>
                                 </div>
                             </a>
@@ -71,7 +109,7 @@
                 <div class="card m-3 rounded-4" style="width: 441px; height: 221px;">
                     <div class="row g-0 m-auto">
                         <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-                            <div class="card rounded-3 p-1" style="width: 181px; height: 181px;">
+                            <div class="card rounded-3 p-1 listing-image">
                                 <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
                                     class="img-fluid" alt="...">
                             </div>
