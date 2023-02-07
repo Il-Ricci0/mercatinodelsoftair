@@ -8,6 +8,11 @@
     justify-content: center;
 }
 
+#pfp {
+    height: 60px;
+    width: 60px;
+}
+
 #categories {
     width: 320px;
 }

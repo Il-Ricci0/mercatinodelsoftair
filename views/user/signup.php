@@ -10,7 +10,7 @@ $query = "INSERT INTO users (email, username, password, first_name, last_name)
 VALUES ('$email', '$username', '$password','$firstName', '$lastName')";
 $result = mysqli_query($connect, $query);
 if ($result)
-    header("Location: ../../index.html");
+    header("Location: ../../index.php");
 else
     echo "<h1>Signup failed. contact developers for assistance.</h1>";
 ?>

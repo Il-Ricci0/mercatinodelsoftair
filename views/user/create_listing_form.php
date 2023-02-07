@@ -1,9 +1,16 @@
+<?php
+session_start();
+?>
 <html>
 <div id="header"></div>
-
+<?php
+echo $_SESSION['logged_in'];
+?>
 <body>
     <div class="m-5">
-        <form action="index.html" method="POST" class="form-horizontal">
+        <form action="create_listing.php" method="POST" class="form-horizontal">
+            <input type="text" name="user" id="user" value="<?php $_SESSION['logged_in']?>" hidden>
+            <input type="text" name="category" id="category" value="test" hidden>
             <div class="form-group">
                 <h3>Creazione Annuncio</h3>
                 <div class="col-sm-6">
