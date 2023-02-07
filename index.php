@@ -27,8 +27,8 @@ session_start();
         echo '
         <div class="d-flex">
         <a class="btn btn-outline-secondary" role="button" href="views/user/create_listing_form.php">Crea annuncio</a>
-        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="views/user/signup.html">Registrati</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="views/user/signin.html">Accedi</a>
+        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="views/user/signup_form.php">Registrati</a>
+        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="views/user/signin_form.php">Accedi</a>
         </div>
         ';
     }
@@ -44,8 +44,6 @@ session_start();
     }
     ?>
 </nav>
-
-<div id="header"></div>
 
 <body>
     <div class="container">

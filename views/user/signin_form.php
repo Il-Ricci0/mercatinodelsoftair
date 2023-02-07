@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <html>
 
 <head>
@@ -24,46 +21,39 @@ session_start();
     <?php
     if (!isset($_SESSION['logged_in'])) {
         echo '
-        <div class="d-flex">
-        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="signup_form.php">Registrati</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="signin_form.php">Accedi</a>
-        </div>
-        ';
+            <div class="d-flex">
+            <a class="btn btn-outline-primary" role="button" href="signup_form.php">Registrati</a>
+            </div>
+            ';
     } else {
         echo '
-        <div class="d-flex align-items-center">
-        <div class="circle" id="pfp">
-        ' . $_SESSION["username"] . '
-        </div>
-        </div>
-        ';
+            <div class="d-flex align-items-center">
+            <a class="btn btn-outline-secondary me-2" role="button" href="create_listing_form.php">Crea annuncio</a>
+            <div class="circle" id="pfp">
+            ' . $_SESSION["username"] . '
+            </div>
+            </div>
+            ';
     }
     ?>
 </nav>
 
 <body>
     <div class="m-5">
-        <form action="create_listing.php" method="POST" class="form-horizontal">
-            <!-- <input type="text" name="user" id="user" value="<?php $_SESSION['logged_in'] ?>" hidden> -->
-            <input type="text" name="category" id="category" value="test" hidden>
+        <form action="signin.php" method="POST" class="form-horizontal">
             <div class="form-group">
-                <h3>Creazione Annuncio</h3>
+                <h3>Accedi</h3>
                 <div class="col-sm-6">
-                    <input type="text" name="title" id="listing-title" class="form-control my-2"
-                        placeholder="titolo annuncio" required>
+                    <input type="text" name="email" id="email" class="form-control my-2" placeholder="email" required>
                 </div>
                 <div class="col-sm-6">
-                    <input type="text" name="description" id="listing-description" class="form-control my-2"
-                        placeholder="descrizione" required>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" name="price" id="listing-price" class="form-control my-2" placeholder="prezzo"
-                        required>
+                    <input type="password" name="password" id="password" class="form-control my-2"
+                        placeholder="password" required>
                 </div>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">
-                    <i class="fa fa-plus"></i> Crea Annuncio
+                    Accedi
                 </button>
             </div>
         </form>
