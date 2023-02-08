@@ -1,15 +1,14 @@
 <?php
+session_start();
 include('db_connect.php');
-$id=null;
-$user = $_POST['user'];
+$user = $_SESSION['logged_in'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $price = $_POST['price'];
 $category = $_POST['category'];
 $state="active";
-
-$query = "INSERT INTO listings (id, user, title, description, price, category, state)
-VALUES ('$id', '$user', '$title','$description', '$price', '$category', '$state')";
+$query = "INSERT INTO listings (user, title, description, price, category)
+VALUES ('$user', '$title','$description', '$price', '$category')";
 $result = mysqli_query($connect, $query);
 if ($result)
     header("Location: ../../index.php");

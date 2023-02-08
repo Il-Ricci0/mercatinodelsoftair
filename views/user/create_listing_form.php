@@ -44,7 +44,7 @@ session_start();
 <body>
     <div class="m-5">
         <form action="create_listing.php" method="POST" class="form-horizontal">
-            <!-- <input type="text" name="user" id="user" value="<?php $_SESSION['logged_in'] ?>" hidden> -->
+            <input type="text" name="user" id="user" value="<?php $_SESSION['logged_in'] ?>" hidden>
             <input type="text" name="category" id="category" value="test" hidden>
             <div class="form-group">
                 <h3>Creazione Annuncio</h3>
