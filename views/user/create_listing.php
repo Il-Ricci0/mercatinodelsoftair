@@ -9,8 +9,8 @@ $category = $_POST['category'];
 $state="active";
 $query = "INSERT INTO listings (user, title, description, price, category)
 VALUES ('$user', '$title','$description', '$price', '$category')";
-$result = mysqli_query($connect, $query);
-if ($result)
+$response = mysqli_query($connect, $query);
+if ($response)
     header("Location: ../../index.php");
 else
     echo "<h1>Listing creation failed. contact developers for assistance.</h1>";

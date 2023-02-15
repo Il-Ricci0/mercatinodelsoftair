@@ -19,14 +19,14 @@
                 class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
     </form>
     <?php
-        if (!isset($_SESSION['logged_in'])) {
-            echo '
+    if (!isset($_SESSION['logged_in'])) {
+        echo '
             <div class="d-flex">
             <a class="btn btn-outline-primary" role="button" href="signin_form.php">Accedi</a>
             </div>
             ';
-        } else {
-            echo '
+    } else {
+        echo '
             <div class="d-flex align-items-center">
             <a class="btn btn-outline-secondary me-2" role="button" href="create_listing_form.php">Crea annuncio</a>
             <div class="circle" id="pfp">
@@ -34,41 +34,37 @@
             </div>
             </div>
             ';
-        }
-        ?>
+    }
+    ?>
 </nav>
 
 <body>
-    <div class="m-5">
-        <form action="signup.php" method="POST" class="form-horizontal">
-            <div class="form-group">
-                <h3>Registrazione Account</h3>
-                <div class="col-sm-6">
-                    <input type="text" name="firstName" id="firstName" class="form-control my-2" placeholder="nome"
+    <div class="w-100 d-flex justify-content-center">
+        <div class="card form-card m-5 p-4">
+            <form action="signup.php" method="POST" class="form-horizontal">
+                <div class="form-group">
+                    <div class="mb-3">
+                        <h3>Registrazione Account</h3>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="firstName" id="firstName" class="form-control my-2" placeholder="nome"
                         required>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" name="lastName" id="lastName" class="form-control my-2" placeholder="cognome"
+                        <input type="text" name="lastName" id="lastName" class="form-control my-2" placeholder="cognome"
                         required>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" name="email" id="email" class="form-control my-2" placeholder="email" required>
-                </div>
-                <div class="col-sm-6">
-                    <input type="text" name="username" id="username" class="form-control my-2" placeholder="username"
+                        <input type="text" name="email" id="email" class="form-control my-2" placeholder="email" required>
+                        <input type="text" name="username" id="username" class="form-control my-2" placeholder="username"
                         required>
-                </div>
-                <div class="col-sm-6">
-                    <input type="password" name="password" id="password" class="form-control my-2"
+                        <input type="password" name="password" id="password" class="form-control my-2"
                         placeholder="password" required>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                    Conferma Registrazione
-                </button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Conferma Registrazione
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 </body>
 <div id="footer"></div>

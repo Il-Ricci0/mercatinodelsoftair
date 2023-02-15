@@ -9,3 +9,13 @@ function expandOrCollapseCategory(category) {
             subcategory.removeAttribute("hidden");
     });
 }
+
+function expandOrCollapseUserMenu(){
+    menu = document.getElementById("user-menu");
+    if(menu.hasAttribute("hidden")){
+        menu.removeAttribute("hidden");
+    }
+    else{
+        menu.setAttribute("hidden","");
+    }
+}

@@ -18,6 +18,22 @@
 }
 
 .listing-image {
+    margin: 15px;
     width: 181px;
     height: 181px;
+}
+
+.listing-card {
+    height: 221px;
+    width: 442px;
+}
+
+.form-card {
+    width: fit-content;
+}
+
+#user-menu {
+    position:fixed;
+    right:10;
+    top: 100;
 }
