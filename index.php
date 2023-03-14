@@ -49,7 +49,8 @@ session_start();
         <a class="btn btn-light rounded-bottom-0 border-bottom-0 d-block" href="#" role="button">Impostazioni</a>
         <a class="btn btn-light rounded-0 d-block" href="#" role="button">I tuoi annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="#" role="button">Annunci salvati</a>
-        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="views/user/logout.php" role="button" id="logout-button">Esci</a>
+        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="views/user/logout.php" role="button"
+            id="logout-button">Esci</a>
     </div>
 </div>
 
@@ -253,14 +254,16 @@ session_start();
                             </div>
                             <div class="col-6">
                                 <div class="card-body h-100">
+                                    <div class="h-75">
                                     <h5 class="card-title">' . $listing['title'] . '</h5>
                                     <p class="card-text">' . $listing['description'] . '</p>
+                                    </div>
                                     <div class="row">
                                         <div class="col">
-                                        <p class="card-text text-muted">500$</p>
+                                            <p class="card-text text-muted">' . $listing['price'] . '$' . '</p>
                                         </div>
                                         <div class="col">
-                                        <a class="btn btn-warning" href="" role="button">contatta</a>
+                                            <a class="btn btn-warning" href="" role="button">contatta</a>
                                         </div>
                                     </div>
                                 </div>

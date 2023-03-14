@@ -65,7 +65,7 @@ session_start();
                 </div>
             </form>
         </div>
-</div>
+    </div>
 </body>
 <div id="footer"></div>
 <script src="..\..\templates\user_template.js"></script>
