@@ -48,14 +48,15 @@
                     </div>
                     <div class="mb-3">
                         <input type="text" name="firstName" id="firstName" class="form-control my-2" placeholder="nome"
-                        required>
+                            required>
                         <input type="text" name="lastName" id="lastName" class="form-control my-2" placeholder="cognome"
-                        required>
-                        <input type="text" name="email" id="email" class="form-control my-2" placeholder="email" required>
-                        <input type="text" name="username" id="username" class="form-control my-2" placeholder="username"
-                        required>
+                            required>
+                        <input type="text" name="email" id="email" class="form-control my-2" placeholder="email"
+                            required>
+                        <input type="text" name="username" id="username" class="form-control my-2"
+                            placeholder="username" required>
                         <input type="password" name="password" id="password" class="form-control my-2"
-                        placeholder="password" required>
+                            placeholder="password" required>
                     </div>
                 </div>
                 <div class="form-group">

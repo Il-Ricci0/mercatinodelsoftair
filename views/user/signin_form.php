@@ -39,24 +39,27 @@
 </nav>
 
 <body>
-    <div class="m-5">
-        <form action="signin.php" method="POST" class="form-horizontal">
-            <div class="form-group">
-                <h3>Accedi</h3>
-                <div class="col-sm-6">
-                    <input type="text" name="email" id="email" class="form-control my-2" placeholder="email" required>
+    <div class="w-100 d-flex justify-content-center">
+        <div class="card form-card m-5 p-4">
+            <form action="signin.php" method="POST" class="form-horizontal">
+                <div class="form-group">
+                    <div class="mb-3">
+                        <h3>Accedi</h3>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" name="email" id="email" class="form-control my-2" placeholder="email"
+                            required>
+                        <input type="password" name="password" id="password" class="form-control my-2"
+                            placeholder="password" required>
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    <input type="password" name="password" id="password" class="form-control my-2"
-                        placeholder="password" required>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                        Accedi
+                    </button>
                 </div>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">
-                    Accedi
-                </button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 <div id="footer"></div>
