@@ -42,30 +42,46 @@ session_start();
 </nav>
 
 <body>
-    <div class="w-100 d-flex justify-content-center">
-        <div class="card form-card m-5 p-4">
-            <form action="create_listing.php" method="POST" class="form-horizontal">
-                <div class="form-group">
-                    <input type="text" name="user" id="user" value="<?php $_SESSION['logged_in'] ?>" hidden>
-                    <input type="text" name="category" id="category" value="test" hidden>
-                    <div class="form-group">
-                        <h3>Creazione Annuncio</h3>
-                        <input type="text" name="title" id="listing-title" class="form-control my-2"
-                            placeholder="titolo annuncio" required>
-                        <input type="text" name="description" id="listing-description" class="form-control my-2"
-                            placeholder="descrizione" required>
-                        <input type="text" name="price" id="listing-price" class="form-control my-2"
-                            placeholder="prezzo" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                        Crea Annuncio
-                    </button>
-                </div>
-            </form>
+    <?php
+    if (!isset($_SESSION['logged_in'])) {
+        echo '
+        <!-- not signed-id or signed-up warning -->
+        <div class="w-100 d-flex justify-content-center">
+            <div class="card m-5 p-4 d-inline">
+                Ooops! per creare un annuncio <a href="signin_form.php">accedi</a> o <a href="signup_form.php">registrati</a>.
+            </div>
         </div>
-    </div>
+        ';
+    } else {
+        echo '
+        <!-- create listing form -->
+        <div class="w-100 d-flex justify-content-center">
+            <div class="card form-card m-5 p-4">
+                <form action="create_listing.php" method="POST" class="form-horizontal">
+                    <div class="form-group">
+                        <input type="text" name="user" id="user" value="<?php $_SESSION['. "logged_in" . '] ?>" hidden>
+                        <input type="text" name="category" id="category" value="test" hidden>
+                        <div class="form-group">
+                            <h3>Creazione Annuncio</h3>
+                            <input type="text" name="title" id="listing-title" class="form-control my-2"
+                                placeholder="titolo annuncio" required>
+                            <input type="text" name="description" id="listing-description" class="form-control my-2"
+                                placeholder="descrizione" required>
+                            <input type="text" name="price" id="listing-price" class="form-control my-2"
+                                placeholder="prezzo" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">
+                            Crea Annuncio
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        ';
+    }
+    ?>
 </body>
 <div id="footer"></div>
 <script src="..\..\templates\user_template.js"></script>
