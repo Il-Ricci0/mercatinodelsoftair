@@ -89,48 +89,56 @@ session_start();
                                     </a>
                                 </div>
                             </div>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                id="fucili-elettrici" onclick="expandOrCollapseCategory(this)">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="resurces/ak47.svg" width="25px" height="25px">
+                            <div>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-elettrici" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="resurces/ak47.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>fucili elettrici</text>
                                     </div>
-                                    <text>fucili elettrici</text>
-                                </div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                id="fucili-gas-scarrellanti" onclick="expandOrCollapseCategory(this)">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="resurces/aug.svg" width="25px" height="25px">
+                                </a>
+                            </div>
+                            <div>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-gas-scarrellanti" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="resurces/aug.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>
+                                            fucili a gas scarrellanti
+                                        </text>
                                     </div>
-                                    <text>
-                                        fucili a gas scarrellanti
-                                    </text>
-                                </div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                id="fucili-pump-action" onclick="expandOrCollapseCategory(this)">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="resurces/model1897.svg" width="25px" height="25px">
+                                </a>
+                            </div>
+                            <div>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-pump-action" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="resurces/model1897.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>
+                                            fucili pump action
+                                        </text>
                                     </div>
-                                    <text>
-                                        fucili pump action
-                                    </text>
-                                </div>
-                            </a>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                id="fucili-radio" onclick="expandOrCollapseCategory(this)">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="resurces/radio.svg" width="25px" height="25px">
+                                </a>
+                            </div>
+                            <div>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-radio" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="resurces/radio.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>
+                                            radio
+                                        </text>
                                     </div>
-                                    <text>
-                                        radio
-                                    </text>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
                                     id="abbigliamento" onclick="expandOrCollapseCategory(this)">
@@ -222,17 +230,19 @@ session_start();
                                     </a>
                                 </div>
                             </div>
-                            <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                id="sistemi-puntamento" onclick="expandOrCollapseCategory(this)">
-                                <div class="d-flex align-items-center">
-                                    <div class="circle me-3">
-                                        <img src="resurces/scope.svg" width="25px" height="25px">
+                            <div>
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="sistemi-puntamento" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
+                                        <div class="circle me-3">
+                                            <img src="resurces/scope.svg" width="25px" height="25px">
+                                        </div>
+                                        <text>
+                                            sistemi di puntamento
+                                        </text>
                                     </div>
-                                    <text>
-                                        sistemi di puntamento
-                                    </text>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
