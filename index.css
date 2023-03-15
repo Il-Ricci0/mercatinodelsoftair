@@ -13,6 +13,11 @@
     width: 60px;
 }
 
+#pfp:hover {
+    background-color: grey;
+    transition: 100ms;
+}
+
 #categories {
     width: 320px;
 }
@@ -28,7 +33,7 @@
     width: 442px;
 }
 
-.listing-content{
+.listing-content {
     min-height: 120px;
 }
 
