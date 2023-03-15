@@ -253,9 +253,15 @@ session_start();
                 $query = 'SELECT * FROM listings';
                 $response = mysqli_query($connect, $query);
                 while ($listing = $response->fetch_array()) {
+                    $description = $listing['description'];
+                    $max_description_length = 75;
+                    if (strlen($description) >= $max_description_length) {
+                        $description = substr($description, 0, -(strlen($description) - $max_description_length ));
+                        $description .= '...';
+                    }
                     echo '
                     <div class="card m-3 rounded-4 listing-card">
-                        <div class="row g-0">
+                        <div class="row">
                             <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
                                 <div class="card rounded-3 p-1 listing-image">
                                     <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
@@ -263,16 +269,16 @@ session_start();
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="card-body h-100">
-                                    <div class="h-75">
-                                    <h5 class="card-title">' . $listing['title'] . '</h5>
-                                    <p class="card-text">' . $listing['description'] . '</p>
+                                <div class="card-body py-0">
+                                    <div class="listing-content">
+                                        <h5 class="card-title">' . $listing['title'] . '</h5>
+                                        <p class="card-text">' . $description . '</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col">
+                                    <div class="row mt-2">
+                                        <div class="col-6">
                                             <p class="card-text text-muted">' . $listing['price'] . '$' . '</p>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-6">
                                             <a class="btn btn-warning" href="" role="button">contatta</a>
                                         </div>
                                     </div>

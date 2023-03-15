@@ -6,11 +6,15 @@ $title = $_POST['title'];
 $description = $_POST['description'];
 $price = $_POST['price'];
 $category = $_POST['category'];
-$state="active";
-$query = "INSERT INTO listings (user, title, description, price, category)
-VALUES ('$user', '$title','$description', '$price', '$category')";
-$response = mysqli_query($connect, $query);
-if ($response)
+$status = "active";
+
+//procedura per evitare sql injection
+$query = "INSERT INTO listings (user, title, description, price, category, status) VALUES(?,?,?,?,?,?)";
+$statement = $connect->prepare($query);
+$statement->bind_param("sssiss", $user, $title, $description, $price, $category, $status);
+$statement->execute();
+
+if ($statement)
     header("Location: ../../index.php");
 else
     echo "<h1>Listing creation failed. contact developers for assistance.</h1>";

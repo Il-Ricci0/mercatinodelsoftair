@@ -17,15 +17,19 @@
     width: 320px;
 }
 
-.listing-image-box, .listing-image {
-    margin: 15px;
+.listing-image-box,
+.listing-image {
     max-width: 181px;
     max-height: 181px;
 }
 
 .listing-card {
-    height: 221px;
+    padding: 15px;
     width: 442px;
+}
+
+.listing-content{
+    min-height: 120px;
 }
 
 .form-card {
@@ -33,7 +37,7 @@
 }
 
 #user-menu {
-    position:fixed;
-    right:10;
+    position: fixed;
+    right: 10;
     top: 100;
 }
