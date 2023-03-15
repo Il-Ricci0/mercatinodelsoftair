@@ -256,7 +256,7 @@ session_start();
                     echo '
                     <div class="card m-3 rounded-4 listing-card">
                         <div class="row g-0">
-                            <div class="col-6 d-flex align-items-center justify-content-center">
+                            <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
                                 <div class="card rounded-3 p-1 listing-image">
                                     <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
                                         class="img-fluid" alt="...">
@@ -283,30 +283,6 @@ session_start();
                 ';
                 }
                 ?>
-                <div class="card m-3 rounded-4" style="width: 441px; height: 221px;">
-                    <div class="row g-0 m-auto">
-                        <div class="col-6 d-flex flex-column align-items-center justify-content-center">
-                            <div class="card rounded-3 p-1 listing-image">
-                                <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
-                                    class="img-fluid" alt="...">
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="card-body">
-                                <h5 class="card-title">HK416 VFC</h5>
-                                <p class="card-text">descrizione prodotto descrizione prodotto descrizione prodotto.</p>
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="card-text text-muted">500$</p>
-                                    </div>
-                                    <div class="col">
-                                        <a class="btn btn-warning" href="" role="button">contatta</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="col bg-secondary">
                 <div class="sticky-top">

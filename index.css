@@ -17,10 +17,10 @@
     width: 320px;
 }
 
-.listing-image {
+.listing-image-box, .listing-image {
     margin: 15px;
-    width: 181px;
-    height: 181px;
+    max-width: 181px;
+    max-height: 181px;
 }
 
 .listing-card {
