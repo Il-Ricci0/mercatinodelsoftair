@@ -2,6 +2,8 @@
 
 <head>
     <script type="text/javascript" src="../../vendor/bootstrap/bootstrap.js"></script>
+    <!-- router performs routing throught the pages -->
+    <script type="text/javascript" src="router.js"></script>
     <link rel="stylesheet" href="../../index.css">
     <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="../../vendor/fontawesome/css/fontawesome.css">
@@ -22,13 +24,13 @@
     if (!isset($_SESSION['logged_in'])) {
         echo '
             <div class="d-flex">
-            <a class="btn btn-outline-primary" role="button" href="signup_form.php">Registrati</a>
+            <a class="btn btn-outline-primary" role="button" onclick="route(' . "'/signup'" . ')">Registrati</a>
             </div>
             ';
     } else {
         echo '
             <div class="d-flex align-items-center">
-            <a class="btn btn-outline-secondary me-2" role="button" href="create_listing_form.php">Crea annuncio</a>
+            <a class="btn btn-outline-secondary me-2" role="button" onclick="route(' . "'/listing'" . ')">Crea annuncio</a>
             <div class="circle" id="pfp">
             ' . $_SESSION["username"] . '
             </div>

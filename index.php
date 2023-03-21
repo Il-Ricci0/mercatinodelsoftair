@@ -4,8 +4,10 @@ session_start();
 <html>
 
 <head>
-    <script type="text/javascript" src="vendor/bootstrap/bootstrap.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <!-- router performs routing throught the pages -->
+    <script type="text/javascript" src="vendor/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="router.js"></script>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="vendor/fontawesome/css/fontawesome.css">
@@ -14,7 +16,7 @@ session_start();
 </head>
 
 <nav class="navbar bg-light p-2">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" onclick="route('/')">
         <img src="resurces/logo.svg" width="150">
     </a>
     <form class="form-inline d-flex">
@@ -26,9 +28,9 @@ session_start();
     if (!isset($_SESSION['logged_in'])) {
         echo '
         <div class="d-flex">
-        <a class="btn btn-outline-secondary" role="button" href="views/user/create_listing_form.php">Crea annuncio</a>
-        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="views/user/signup_form.php">Registrati</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="views/user/signin_form.php">Accedi</a>
+        <a class="btn btn-outline-secondary" role="button" onclick="route('."'/listing'".')">Crea annuncio</a>
+        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" onclick="route('."'/signup'".')">Registrati</a>
+        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" onclick="route('."'/signin'".')">Accedi</a>
         </div>
         ';
     } else {
@@ -55,6 +57,9 @@ session_start();
 </div>
 
 <body>
+    <div>
+        <text onclick="route('/home')">ciao</text>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col bg-secondary">
@@ -249,14 +254,14 @@ session_start();
             </div>
             <div class="col">
                 <?php
-                include('views/user/db_connect.php');
+                include('user/db_connect.php');
                 $query = 'SELECT * FROM listings';
                 $response = mysqli_query($connect, $query);
                 while ($listing = $response->fetch_array()) {
                     $description = $listing['description'];
                     $max_description_length = 75;
                     if (strlen($description) >= $max_description_length) {
-                        $description = substr($description, 0, -(strlen($description) - $max_description_length ));
+                        $description = substr($description, 0, -(strlen($description) - $max_description_length));
                         $description .= '...';
                     }
                     echo '
