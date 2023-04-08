@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 
 <head>
@@ -22,7 +26,7 @@
     if (!isset($_SESSION['logged_in'])) {
         echo '
             <div class="d-flex">
-            <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signup/index.php">Registrati</a>
+            <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signin/index.php">Accedi</a>
             </div>
             ';
     } else {
@@ -39,28 +43,36 @@
 </nav>
 
 <body>
+<?php
+
+echo'
     <div class="w-100 d-flex justify-content-center">
         <div class="card form-card m-5 p-4">
-            <form action="/mercatinodelsoftair/user/be_signin/index.php" method="POST" class="form-horizontal">
+            <form action="/mercatinodelsoftair/user/be_account_management/index.php" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <div class="mb-3">
-                        <h3>Accedi</h3>
+                        <h3>Impostazioni Account</h3>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="email" id="email" class="form-control my-2" placeholder="email"
-                        autocomplete="email" required>
+                        <input type="text" name="firstName" id="firstName" class="form-control my-2" value="' . $_SESSION["first_name"] . '"
+                            required>
+                        <input type="text" name="lastName" id="lastName" class="form-control my-2" value="' . $_SESSION["last_name"] . '"
+                            required>
+                        <input type="text" name="username" id="username" class="form-control my-2"
+                            value="' . $_SESSION["username"] . '" required>
                         <input type="password" name="password" id="password" class="form-control my-2"
-                        autocomplete="password" placeholder="password" required>
+                            placeholder="Password" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">
-                        Accedi
+                        Salva Modifiche
                     </button>
                 </div>
             </form>
         </div>
-    </div>
+    </div>'
+?>
 </body>
 <div id="footer"></div>
 <script src="/mercatinodelsoftair/templates/user_template.js"></script>

@@ -9,8 +9,11 @@ $count = mysqli_num_rows($result);
 if ($count == 1) {
     session_start();
     $_SESSION['logged_in'] = $email;
-    $query = "SELECT username FROM users WHERE email = '$email'";
+    $query = "SELECT username, first_name, last_name FROM users WHERE email = '$email'";
     $_SESSION['username'] = mysqli_fetch_assoc(mysqli_query($connect, $query))['username'];
+    $_SESSION['first_name'] = mysqli_fetch_assoc(mysqli_query($connect, $query))['first_name'];
+    $_SESSION['last_name'] = mysqli_fetch_assoc(mysqli_query($connect, $query))['last_name'];
+    $_SESSION['email'] = $email;
     header("Location: /mercatinodelsoftair/index.php");
 } else {
     echo "<h1>Signin failed. Invalid email or password.</h1>";
