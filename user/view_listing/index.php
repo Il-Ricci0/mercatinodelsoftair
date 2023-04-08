@@ -39,6 +39,18 @@
 </nav>
 
 <body>
+<?php
+    $current_id = htmlspecialchars($_GET["id"]);
+    include('../../db_connect.php');
+    $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active" AND id=' . $current_id;
+
+    $statement = $connect->prepare($query);
+    $statement->bind_result($id, $title, $description, $price, $category);
+    $statement->execute();
+    $statement->fetch();
+
+    echo'
+
     <div class="w-100 d-flex justify-content-center">
         <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
                 <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
@@ -47,12 +59,17 @@
     </div>
 
     <div class="w-100 d-flex justify-content-center">
-        <h1 class="display-1">TITLE</h1>
-        <br>
-        <h2 class="display-2">Prezzo</h1>
-        <br>
-        <h6 class="display-6">Descrizione</h1>
+        <h1 class="display-1">' . $title . '</h1>
     </div>
+
+    <div class="w-100 d-flex justify-content-center">
+        <h2 class="display-2">' . $price . '</h1>
+    </div>
+
+    <div class="w-100 d-flex justify-content-center">
+        <h6 class="display-6">' . $description . '</h1>
+    </div>'
+    ?>
 </body>
 <div id="footer"></div>
 <script src="/mercatinodelsoftair/templates/user_template.js"></script>

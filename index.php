@@ -49,8 +49,8 @@ session_start();
         <a class="btn btn-light rounded-bottom-0 border-bottom-0 d-block" href="#" role="button">Impostazioni</a>
         <a class="btn btn-light rounded-0 d-block" href="#" role="button">I tuoi annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="#" role="button">Annunci salvati</a>
-        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="/mercatinodelsoftair/user/be_logout/index.php" role="button"
-            id="logout-button">Esci</a>
+        <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
+            href="/mercatinodelsoftair/user/be_logout/index.php" role="button" id="logout-button">Esci</a>
     </div>
 </div>
 
@@ -80,7 +80,8 @@ session_start();
                                         data-bs-toggle="list" href="">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/vsr.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/vsr.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 sottocategoria
@@ -94,7 +95,8 @@ session_start();
                                     id="fucili-elettrici" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/ak47.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/ak47.svg" width="25px"
+                                                height="25px">
                                         </div>
                                         <text>fucili elettrici</text>
                                     </div>
@@ -118,7 +120,8 @@ session_start();
                                     id="fucili-pump-action" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/model1897.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/model1897.svg" width="25px"
+                                                height="25px">
                                         </div>
                                         <text>
                                             fucili pump action
@@ -131,7 +134,8 @@ session_start();
                                     id="fucili-radio" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/radio.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/radio.svg" width="25px"
+                                                height="25px">
                                         </div>
                                         <text>
                                             radio
@@ -144,7 +148,8 @@ session_start();
                                     id="abbigliamento" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/soldier-shirt.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/soldier-shirt.svg" width="25px"
+                                                height="25px">
                                         </div>
                                         <text>
                                             abbigliamento
@@ -156,7 +161,8 @@ session_start();
                                         data-bs-toggle="list" href="" id="anfibi">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/boot.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/boot.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 anfibi
@@ -169,7 +175,8 @@ session_start();
                                         data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/patch.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/patch.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 patch
@@ -183,7 +190,8 @@ session_start();
                                     id="protezioni" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/soldier-protections.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/soldier-protections.svg"
+                                                width="25px" height="25px">
                                         </div>
                                         <text>
                                             protezioni
@@ -195,7 +203,8 @@ session_start();
                                         data-bs-toggle="list" href="" id="occhiali-protettivi">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/glasses.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/glasses.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 occhiali protettivi
@@ -208,7 +217,8 @@ session_start();
                                         data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/helmet.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/helmet.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 elmetti
@@ -221,7 +231,8 @@ session_start();
                                         data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
-                                                <img src="/mercatinodelsoftair/resurces/gloves.svg" width="25px" height="25px">
+                                                <img src="/mercatinodelsoftair/resurces/gloves.svg" width="25px"
+                                                    height="25px">
                                             </div>
                                             <text>
                                                 guanti
@@ -235,7 +246,8 @@ session_start();
                                     id="sistemi-puntamento" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
-                                            <img src="/mercatinodelsoftair/resurces/scope.svg" width="25px" height="25px">
+                                            <img src="/mercatinodelsoftair/resurces/scope.svg" width="25px"
+                                                height="25px">
                                         </div>
                                         <text>
                                             sistemi di puntamento
@@ -250,10 +262,13 @@ session_start();
             <div class="col">
                 <?php
                 include('db_connect.php');
-                $query = 'SELECT * FROM listings';
-                $response = mysqli_query($connect, $query);
-                while ($listing = $response->fetch_array()) {
-                    $description = $listing['description'];
+                $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active"';
+
+                $statement = $connect->prepare($query);
+                $statement->bind_result($id, $title, $description, $price, $category);
+                $statement->execute();
+
+                while ($statement->fetch()) {
                     $max_description_length = 75;
                     if (strlen($description) >= $max_description_length) {
                         $description = substr($description, 0, -(strlen($description) - $max_description_length));
@@ -265,21 +280,21 @@ session_start();
                             <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
                                 <div class="card rounded-3 p-1 listing-image">
                                     <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
-                                        class="img-fluid" alt="...">
+                                        class="img-fluid">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="card-body py-0">
                                     <div class="listing-content">
-                                        <h5 class="card-title">' . $listing['title'] . '</h5>
+                                        <h5 class="card-title">' . $title . '</h5>
                                         <p class="card-text">' . $description . '</p>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-6">
-                                            <p class="card-text text-muted">' . $listing['price'] . '$' . '</p>
+                                            <p class="card-text text-muted">' . $price . '$' . '</p>
                                         </div>
                                         <div class="col-6">
-                                            <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php">contatta</a>
+                                            <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">contatta</a>
                                         </div>
                                     </div>
                                 </div>
@@ -299,6 +314,6 @@ session_start();
     </div>
 </body>
 <div id="footer"></div>
-<script src="templates/index_template.js"></script>
+<script src="/mercatinodelsoftair/templates/index_template.js"></script>
 
 </html>
