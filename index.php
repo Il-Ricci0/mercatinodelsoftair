@@ -14,7 +14,7 @@ session_start();
 </head>
 
 <nav class="navbar bg-light p-2">
-    <a class="navbar-brand" onclick="route('/')">
+    <a class="navbar-brand" href="/mercatinodelsoftair/index.php">
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <form class="form-inline d-flex">
@@ -249,7 +249,7 @@ session_start();
             </div>
             <div class="col">
                 <?php
-                include('/mercatinodelsoftair/db_connect.php');
+                include('db_connect.php');
                 $query = 'SELECT * FROM listings';
                 $response = mysqli_query($connect, $query);
                 while ($listing = $response->fetch_array()) {

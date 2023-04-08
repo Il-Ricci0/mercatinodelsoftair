@@ -10,7 +10,7 @@
 </head>
 
 <nav class="navbar bg-light p-2">
-    <a class="navbar-brand" onclick="route('/home')">
+    <a class="navbar-brand" href="/mercatinodelsoftair/index.php">
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <form class="form-inline d-flex">

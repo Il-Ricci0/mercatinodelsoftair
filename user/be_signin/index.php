@@ -1,5 +1,5 @@
 <?php
-include('/mercatinodelsoftair/db_connect.php');
+include('../../db_connect.php');
 $email = $_POST['email'];
 $password = $_POST['password'];
 

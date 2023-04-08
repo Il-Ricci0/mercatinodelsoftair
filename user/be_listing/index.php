@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('/mercatinodelsoftair/db_connect.php');
+include('../../db_connect.php');
 $user = $_SESSION['logged_in'];
 $title = $_POST['title'];
 $description = $_POST['description'];
