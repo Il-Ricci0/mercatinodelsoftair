@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('db_connect.php');
+include('/mercatinodelsoftair/db_connect.php');
 $user = $_SESSION['logged_in'];
 $title = $_POST['title'];
 $description = $_POST['description'];
@@ -15,7 +15,7 @@ $statement->bind_param("sssiss", $user, $title, $description, $price, $category,
 $statement->execute();
 
 if ($statement)
-    header("Location: ../../index.php");
+    header("Location: /mercatinodelsoftair/index.php");
 else
     echo "<h1>Listing creation failed. contact developers for assistance.</h1>";
 ?>

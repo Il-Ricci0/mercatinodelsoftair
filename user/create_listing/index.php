@@ -4,19 +4,17 @@ session_start();
 <html>
 
 <head>
-    <!-- router performs routing throught the pages -->
-    <script type="text/javascript" src="../../router.js"></script>
-    <script type="text/javascript" src="../../vendor/bootstrap/bootstrap.js"></script>
-    <link rel="stylesheet" href="../../index.css">
-    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../../vendor/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.css">
+    <script type="text/javascript" src="/mercatinodelsoftair/vendor/bootstrap/bootstrap.js"></script>
+    <link rel="stylesheet" href="/mercatinodelsoftair/index.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/all.css">
     </link>
 </head>
 
 <nav class="navbar bg-light p-2">
     <a class="navbar-brand" onclick="route('/')">
-        <img src="../../resurces/logo.svg" width="150">
+        <img src="mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <form class="form-inline d-flex">
         <input class="form-control rounded-end-0" type="search" placeholder="cerca annuncio">
@@ -27,8 +25,8 @@ session_start();
     if (!isset($_SESSION['logged_in'])) {
         echo '
         <div class="d-flex">
-        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" onclick="route(' . "'/signup'" . ')">Registrati</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" onclick="route(' . "'/signup'" . ')">Accedi</a>
+        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="/mercatinodelsoftair/user/signup/index.php">Registrati</a>
+        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="/mercatinodelsoftair/user/signin/index.php">Accedi</a>
         </div>
         ';
     } else {
@@ -50,7 +48,7 @@ session_start();
         <!-- not signed-id or signed-up warning -->
         <div class="w-100 d-flex justify-content-center">
             <div class="card m-5 p-4 d-inline">
-                Ooops! per creare un annuncio <a onclick="route(' . "'/signin'" . ')">accedi</a> o <a onclick="route(' . "'/signup'" . ')">registrati</a>.
+                Ooops! per creare un annuncio <a href="/mercatinodelsoftair/user/signin/index.php">accedi</a> o <a href=href="/mercatinodelsoftair/user/signup/index.php">registrati</a>.
             </div>
         </div>
         ';
@@ -59,7 +57,7 @@ session_start();
         <!-- create listing form -->
         <div class="w-100 d-flex justify-content-center">
             <div class="card form-card m-5 p-4">
-                <form action="create_listing.php" method="POST" class="form-horizontal">
+                <form action="/mercatinodelsoftair/user/be_listing/index.php" method="POST" class="form-horizontal">
                     <div class="form-group">
                         <input type="text" name="user" id="user" value="<?php $_SESSION[' . "logged_in" . '] ?>" hidden>
                         <input type="text" name="category" id="category" value="test" hidden>
@@ -86,6 +84,5 @@ session_start();
     ?>
 </body>
 <div id="footer"></div>
-<script src="..\..\templates\user_template.js"></script>
-
+<script src="/mercatinodelsoftair/templates/user_template.js"></script>
 </html>

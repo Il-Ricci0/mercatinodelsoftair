@@ -1,17 +1,17 @@
 <html>
 
 <head>
-    <script type="text/javascript" src="../../vendor/bootstrap/bootstrap.js"></script>
-    <link rel="stylesheet" href="../../index.css">
-    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="../../vendor/fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="../../vendor/fontawesome/css/all.css">
+    <script type="text/javascript" src="/mercatinodelsoftair/vendor/bootstrap/bootstrap.js"></script>
+    <link rel="stylesheet" href="/mercatinodelsoftair/index.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/all.css">
     </link>
 </head>
 
 <nav class="navbar bg-light p-2">
-    <a class="navbar-brand" href="../../index.php">
-        <img src="../../resurces/logo.svg" width="150">
+    <a class="navbar-brand" onclick="route('/home')">
+        <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <form class="form-inline d-flex">
         <input class="form-control rounded-end-0" type="search" placeholder="cerca annuncio">
@@ -22,13 +22,13 @@
     if (!isset($_SESSION['logged_in'])) {
         echo '
             <div class="d-flex">
-            <a class="btn btn-outline-primary" role="button" href="signin_form.php">Accedi</a>
+            <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signin/index.php">Accedi</a>
             </div>
             ';
     } else {
         echo '
             <div class="d-flex align-items-center">
-            <a class="btn btn-outline-secondary me-2" role="button" href="create_listing_form.php">Crea annuncio</a>
+            <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
             <div class="circle" id="pfp">
             ' . $_SESSION["username"] . '
             </div>
@@ -41,7 +41,7 @@
 <body>
     <div class="w-100 d-flex justify-content-center">
         <div class="card form-card m-5 p-4">
-            <form action="signup.php" method="POST" class="form-horizontal">
+            <form action="/mercatinodelsoftair/user/be_signup/index.php" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <div class="mb-3">
                         <h3>Registrazione Account</h3>
@@ -69,6 +69,6 @@
     </div>
 </body>
 <div id="footer"></div>
-<script src="..\..\templates\user_template.js"></script>
+<script src="/mercatinodelsoftair/templates/user_template.js"></script>
 
 </html>
