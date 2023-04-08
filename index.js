@@ -10,24 +10,29 @@ function expandOrCollapseCategory() {
         if (subcategory.hasAttribute("hidden"))
             subcategory.removeAttribute("hidden");
     });
-    let macrocategory = document.getElementById(id).parentElement.getAttribute('name');
-    subcategories = document.getElementsByName(macrocategory);
-    subcategories.forEach(subcategory => {
-        if (subcategory.hasAttribute("hidden"))
-            subcategory.removeAttribute("hidden");
-    });
-    let selected = document.getElementById(id);
-    selected.classList.add('bg-primary');
-    selected.classList.add('text-light');
+    try {
+
+        let macrocategory = document.getElementById(id).parentElement.getAttribute('name');
+        subcategories = document.getElementsByName(macrocategory);
+        subcategories.forEach(subcategory => {
+            if (subcategory.hasAttribute("hidden"))
+                subcategory.removeAttribute("hidden");
+        });
+        let selected = document.getElementById(id);
+        selected.classList.add('bg-primary');
+        selected.classList.add('text-light');
+    }
+    catch { }
 }
 
 function filter(id, category) {
     let urlParams = new URLSearchParams(window.location.search);
     let queryId = urlParams.get('id');
+    let search = urlParams.get('search');
     if (queryId == id) {
         window.location.href = "/mercatinodelsoftair/index.php";
     } else {
-        window.location.href = "/mercatinodelsoftair/index.php?id=" + id + "&" + "category=" + category;
+        window.location.href = "/mercatinodelsoftair/index.php?id=" + id + "&" + "category=" + category + "&search=" + search;
     }
 }
 
@@ -40,3 +45,23 @@ function expandOrCollapseUserMenu() {
         menu.setAttribute("hidden", "");
     }
 }
+
+function updateSearchPlaceholder() {
+    let urlParams = new URLSearchParams(window.location.search);
+    let search = urlParams.get('search');
+    document.getElementById("search").value = search;
+}
+
+function search() {
+    let search = document.getElementById("search").value;
+    let urlParams = new URLSearchParams(window.location.search);
+    let id = urlParams.get('id');
+    let category = urlParams.get('category');
+    if(id != null && category != null){
+        window.location.href = "/mercatinodelsoftair/index.php?id=" + id + "&" + "category=" + category + "&search=" + search;
+    }
+    else{
+        window.location.href = "/mercatinodelsoftair/index.php?search=" + search;
+    }
+}
+

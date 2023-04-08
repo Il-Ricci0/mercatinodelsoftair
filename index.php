@@ -17,11 +17,10 @@ session_start();
     <a class="navbar-brand" href="/mercatinodelsoftair/index.php">
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
-    <form class="form-inline d-flex" method="GET">
-        <input class="form-control rounded-end-0" type="search" placeholder="cerca annuncio" name="search">
-        <button class="btn btn-primary rounded-start-0" type="submit"><i
-                class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
-    </form>
+    <div class="form-inline d-flex">
+        <input type="text" class="form-control rounded-end-0" name="search" id="search">
+        <button class="btn btn-primary rounded-start-0" onclick="search()"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+    </div>
     <?php
     if (!isset($_SESSION['logged_in'])) {
         echo '
@@ -260,6 +259,7 @@ session_start();
             <div class="col">
                 <?php
                 include('db_connect.php');
+                $query = '';
                 if (isset($_GET["search"])) {
                     $search = htmlspecialchars($_GET["search"]);
                     $search_words = explode(" ", $search);
@@ -270,25 +270,32 @@ session_start();
                     $search_words_query .= '%"';
                     $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
 
-                    $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
-                    $statement->execute();
+                } else {
+                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active"';
+                }
+                if (isset($_GET["category"])) {
+                    $category = htmlspecialchars($_GET["category"]);
+                    $query .= ' AND category="' . $category . '"';
+                }
+                $statement = $connect->prepare($query);
+                $statement->bind_result($id, $title, $description, $price, $category, $rows);
+                $statement->execute();
 
-                    while ($statement->fetch()) {
-                        $max_description_length = 75;
-                        if (strlen($description) >= $max_description_length) {
-                            $description = substr($description, 0, -(strlen($description) - $max_description_length));
-                            $description .= '...';
-                        }
+                while ($statement->fetch()) {
+                    $max_description_length = 75;
+                    if (strlen($description) >= $max_description_length) {
+                        $description = substr($description, 0, -(strlen($description) - $max_description_length));
+                        $description .= '...';
+                    }
 
-                        if ($rows == 0) {
-                            echo '
+                    if ($rows == 0) {
+                        echo '
                             <div class="d-flex align-items-center justify-content-center">
                             <text class="text-muted">Annunci non trovati.</text>
                             </div>
                             ';
-                        } else {
-                            echo '
+                    } else {
+                        echo '
                         <div class="card m-3 rounded-4 listing-card">
                             <div class="row">
                                 <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
@@ -316,58 +323,6 @@ session_start();
                             </div>
                         </div>
                     ';
-                        }
-                    }
-                } else {
-                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active"';
-
-                    $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
-                    $statement->execute();
-
-                    while ($statement->fetch()) {
-                        $max_description_length = 75;
-                        if (strlen($description) >= $max_description_length) {
-                            $description = substr($description, 0, -(strlen($description) - $max_description_length));
-                            $description .= '...';
-                        }
-
-                        if ($rows == 0) {
-                            echo '
-                            <div class="d-flex align-items-center justify-content-center">
-                            <text class="text-muted">Annunci non trovati.</text>
-                            </div>
-                            ';
-                        } else {
-                            echo '
-                            <div class="card m-3 rounded-4 listing-card">
-                                <div class="row">
-                                    <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
-                                        <div class="card rounded-3 p-1 listing-image">
-                                            <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
-                                                class="img-fluid">
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="card-body py-0">
-                                            <div class="listing-content">
-                                                <h5 class="card-title">' . $title . '</h5>
-                                                <p class="card-text">' . $description . '</p>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="col-6">
-                                                    <p class="card-text text-muted">' . $price . '$' . '</p>
-                                                </div>
-                                                <div class="col-6">
-                                                    <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">vedi</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ';
-                        }
                     }
                 }
                 ?>
@@ -383,6 +338,7 @@ session_start();
 <div id="footer"></div>
 <script src="/mercatinodelsoftair/templates/index_template.js"></script>
 <script>
+    updateSearchPlaceholder();
     expandOrCollapseCategory();
 </script>
 
