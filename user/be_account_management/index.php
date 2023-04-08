@@ -9,7 +9,6 @@ $password = $_POST['password'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 
-
 $query = "SELECT * FROM users WHERE email = '" . $_SESSION["email"] . "' AND password = '$password'";
 $result = mysqli_query($connect, $query);
 $count = mysqli_num_rows($result);

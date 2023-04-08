@@ -16,6 +16,7 @@
 #pfp:hover {
     background-color: grey;
     transition: 100ms;
+    cursor: pointer;
 }
 
 #categories {

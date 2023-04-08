@@ -48,9 +48,7 @@ session_start();
     <div>
         <a class="btn btn-light rounded-bottom-0 border-bottom-0 d-block" role="button"
             href="/mercatinodelsoftair/user/account_management/index.php">Impostazioni</a>
-        <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/your_listings/index.php"
-            role="button">I tuoi
-            annunci</a>
+        <a class="btn btn-light rounded-0 d-block" href="#" role="button">I tuoi annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="#" role="button">Annunci salvati</a>
         <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
             href="/mercatinodelsoftair/user/be_logout/index.php" role="button" id="logout-button">Esci</a>
@@ -68,9 +66,8 @@ session_start();
                             <h5 class="text-muted">categorie:</h5>
                             <div>
                                 <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list"
-                                    id="fucili-bolt-action" name="fucili bolt action"
-                                    onclick="filter(this, this.name)">
-                                    <div class=" d-flex align-items-center">
+                                    href="" id="fucili-bolt-action" onclick="expandOrCollapseCategory(this)">
+                                    <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/vsr.svg" width="25px" height="25px">
                                         </div>
@@ -81,9 +78,8 @@ session_start();
                                 </a>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="fucili-elettrici" name="fucili elettrici"
-                                    onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-elettrici" onclick="filter(this, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/ak47.svg" width="25px"
@@ -94,9 +90,8 @@ session_start();
                                 </a>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="fucili-gas-scarrellanti" name="fucili a gas scarrellanti"
-                                    onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-gas-scarrellanti" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/aug.svg" width="25px" height="25px">
@@ -108,9 +103,8 @@ session_start();
                                 </a>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="fucili-pump-action" name="fucili pump action"
-                                    onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-pump-action" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/model1897.svg" width="25px"
@@ -123,8 +117,8 @@ session_start();
                                 </a>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" id="radio"
-                                    name="radio" onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="fucili-radio" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/radio.svg" width="25px"
@@ -137,9 +131,8 @@ session_start();
                                 </a>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="abbigliamento" name="abbigliamento"
-                                    onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="abbigliamento" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/soldier-shirt.svg" width="25px"
@@ -152,8 +145,7 @@ session_start();
                                 </a>
                                 <div class="subcategory ms-4" name="abbigliamento" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="anfibi" name="anfibi"
-                                        onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" href="" id="anfibi">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/boot.svg" width="25px"
@@ -167,8 +159,7 @@ session_start();
                                 </div>
                                 <div class="subcategory ms-4" name="abbigliamento" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="patch" name="patch"
-                                        onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/patch.svg" width="25px"
@@ -182,8 +173,8 @@ session_start();
                                 </div>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" id="protezioni"
-                                    name="protezioni" onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="protezioni" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/soldier-protections.svg"
@@ -196,8 +187,7 @@ session_start();
                                 </a>
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="occhiali-protettivi" name="occhiali protettivi"
-                                        onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" href="" id="occhiali-protettivi">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/glasses.svg" width="25px"
@@ -211,8 +201,7 @@ session_start();
                                 </div>
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="elmetti" name="elmetti"
-                                        onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/helmet.svg" width="25px"
@@ -226,7 +215,7 @@ session_start();
                                 </div>
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="guanti" name="guanti" onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" href="" id="patch">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/gloves.svg" width="25px"
@@ -240,8 +229,8 @@ session_start();
                                 </div>
                             </div>
                             <div>
-                                <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="sistemi-puntamento" name="sistemi di puntamento" onclick="filter(this, this.name)">
+                                <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
+                                    id="sistemi-puntamento" onclick="expandOrCollapseCategory(this)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/scope.svg" width="25px"
@@ -259,7 +248,7 @@ session_start();
             </div>
             <div class="col">
                 <?php
-                include('db_connect.php');
+                include('../../db_connect.php');
                 if (isset($_GET["search"])) {
                     $search = htmlspecialchars($_GET["search"]);
                     $search_words = explode(" ", $search);
@@ -268,7 +257,7 @@ session_start();
                         $search_words_query .= '%' . $word;
                     }
                     $search_words_query .= '%"';
-                    $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
+                    $query = "SELECT id, title, description, price, category FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active' AND title LIKE " . $search_words_query;
 
                     $statement = $connect->prepare($query);
                     $statement->bind_result($id, $title, $description, $price, $category);
@@ -310,7 +299,7 @@ session_start();
                     ';
                     }
                 } else {
-                    $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active"';
+                    $query = "SELECT id, title, description, price, category FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active'";
 
                     $statement = $connect->prepare($query);
                     $statement->bind_result($id, $title, $description, $price, $category);
