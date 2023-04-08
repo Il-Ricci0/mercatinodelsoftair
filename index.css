@@ -21,6 +21,7 @@
 
 #categories {
     width: 320px;
+    cursor: pointer;
 }
 
 .listing-image-box,

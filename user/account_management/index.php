@@ -5,6 +5,7 @@ session_start();
 <html>
 
 <head>
+    <script type="text/javascript" src="/mercatinodelsoftair/index.js"></script>
     <script type="text/javascript" src="/mercatinodelsoftair/vendor/bootstrap/bootstrap.js"></script>
     <link rel="stylesheet" href="/mercatinodelsoftair/index.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/bootstrap/bootstrap.css">
@@ -29,10 +30,10 @@ session_start();
     } else {
         echo '
         <div class="d-flex align-items-center">
-        <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
-        <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
-        ' . $_SESSION["username"] . '
-        </div>
+            <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
+            <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
+            ' . $_SESSION["username"] . '
+            </div>
         </div>
         ';
     }

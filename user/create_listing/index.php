@@ -74,7 +74,7 @@ session_start();
                                 placeholder="titolo annuncio" required>
                             <input type="text" name="description" id="listing-description" class="form-control my-2"
                                 placeholder="descrizione" required>
-                            <input type="text" name="price" id="listing-price" class="form-control my-2"
+                            <input type="number" name="price" id="listing-price" class="form-control my-2"
                                 placeholder="prezzo" required>
                         </div>
                     </div>

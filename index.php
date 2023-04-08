@@ -34,10 +34,10 @@ session_start();
     } else {
         echo '
         <div class="d-flex align-items-center">
-        <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
-        <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
-        ' . $_SESSION["username"] . '
-        </div>
+            <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
+            <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
+            ' . $_SESSION["username"] . '
+            </div>
         </div>
         ';
     }
@@ -64,8 +64,8 @@ session_start();
                 <div class="sticky-top">
                     FILTER.
                     <div class="card m-3 rounded-4 d-flex align-items-center">
-                        <div class="list-group m-3" id="categories">
-                            <h5 class="text-muted">categorie:</h5>
+                        <h5 class="text-muted">categorie:</h5>
+                        <div class="list-group mx-3 mb-3" id="categories">
                             <div>
                                 <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list"
                                     id="fucili-bolt-action" name="fucili bolt action"
@@ -281,10 +281,14 @@ session_start();
                             $description .= '...';
                         }
 
-                        if($rows == 0){
-                            echo 'Annunci non trovati.';
-                        } else{
-                        echo '
+                        if ($rows == 0) {
+                            echo '
+                            <div class="d-flex align-items-center justify-content-center">
+                            <text class="text-muted">Annunci non trovati.</text>
+                            </div>
+                            ';
+                        } else {
+                            echo '
                         <div class="card m-3 rounded-4 listing-card">
                             <div class="row">
                                 <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
@@ -312,8 +316,8 @@ session_start();
                             </div>
                         </div>
                     ';
+                        }
                     }
-                }
                 } else {
                     $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active"';
 
@@ -328,10 +332,14 @@ session_start();
                             $description .= '...';
                         }
 
-                        if($rows == 0){
-                            echo 'Annunci non trovati.';
-                        } else{
-                        echo '
+                        if ($rows == 0) {
+                            echo '
+                            <div class="d-flex align-items-center justify-content-center">
+                            <text class="text-muted">Annunci non trovati.</text>
+                            </div>
+                            ';
+                        } else {
+                            echo '
                             <div class="card m-3 rounded-4 listing-card">
                                 <div class="row">
                                     <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
@@ -359,8 +367,8 @@ session_start();
                                 </div>
                             </div>
                         ';
+                        }
                     }
-                  }
                 }
                 ?>
             </div>

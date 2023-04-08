@@ -79,7 +79,7 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list" href=""
-                                    id="fucili-elettrici" onclick="filter(this, this.name)">
+                                    id="fucili-elettrici" onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/ak47.svg" width="25px"
@@ -257,10 +257,10 @@ session_start();
                         $search_words_query .= '%' . $word;
                     }
                     $search_words_query .= '%"';
-                    $query = "SELECT id, title, description, price, category FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active' AND title LIKE " . $search_words_query;
+                    $query = "SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active' AND title LIKE " . $search_words_query;
 
                     $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category);
+                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
                     $statement->execute();
 
                     while ($statement->fetch()) {
@@ -269,6 +269,14 @@ session_start();
                             $description = substr($description, 0, -(strlen($description) - $max_description_length));
                             $description .= '...';
                         }
+                        
+                        if($rows == 0){
+                            echo '
+                            <div class="d-flex align-items-center justify-content-center">
+                            <text class="text-muted">Annunci non trovati.</text>
+                            </div>
+                            ';
+                        } else{
                         echo '
                         <div class="card m-3 rounded-4 listing-card">
                             <div class="row">
@@ -298,11 +306,12 @@ session_start();
                         </div>
                     ';
                     }
+                }
                 } else {
-                    $query = "SELECT id, title, description, price, category FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active'";
+                    $query = "SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE user='" . $_SESSION["email"] . "' AND status='active'";
 
                     $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category);
+                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
                     $statement->execute();
 
                     while ($statement->fetch()) {
@@ -311,6 +320,14 @@ session_start();
                             $description = substr($description, 0, -(strlen($description) - $max_description_length));
                             $description .= '...';
                         }
+                        
+                        if($rows == 0){
+                            echo '
+                            <div class="d-flex align-items-center justify-content-center">
+                            <text class="text-muted">Annunci non trovati.</text>
+                            </div>
+                            ';
+                        } else{
                         echo '
                             <div class="card m-3 rounded-4 listing-card">
                                 <div class="row">
@@ -340,6 +357,7 @@ session_start();
                             </div>
                         ';
                     }
+                  }
                 }
                 ?>
             </div>
