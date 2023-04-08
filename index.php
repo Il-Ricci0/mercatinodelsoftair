@@ -69,7 +69,7 @@ session_start();
                             <div>
                                 <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list"
                                     id="fucili-bolt-action" name="fucili bolt action"
-                                    onclick="filter(this, this.name)">
+                                    onclick="filter(this.id, this.name)">
                                     <div class=" d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/vsr.svg" width="25px" height="25px">
@@ -82,8 +82,7 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="fucili-elettrici" name="fucili elettrici"
-                                    onclick="filter(this, this.name)">
+                                    id="fucili-elettrici" name="fucili elettrici" onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/ak47.svg" width="25px"
@@ -96,7 +95,7 @@ session_start();
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
                                     id="fucili-gas-scarrellanti" name="fucili a gas scarrellanti"
-                                    onclick="filter(this, this.name)">
+                                    onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/aug.svg" width="25px" height="25px">
@@ -110,7 +109,7 @@ session_start();
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
                                     id="fucili-pump-action" name="fucili pump action"
-                                    onclick="filter(this, this.name)">
+                                    onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/model1897.svg" width="25px"
@@ -124,7 +123,7 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list" id="radio"
-                                    name="radio" onclick="filter(this, this.name)">
+                                    name="radio" onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/radio.svg" width="25px"
@@ -138,8 +137,7 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="abbigliamento" name="abbigliamento"
-                                    onclick="filter(this, this.name)">
+                                    id="abbigliamento" name="abbigliamento" onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/soldier-shirt.svg" width="25px"
@@ -153,7 +151,7 @@ session_start();
                                 <div class="subcategory ms-4" name="abbigliamento" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
                                         data-bs-toggle="list" id="anfibi" name="anfibi"
-                                        onclick="filter(this, this.name)">
+                                        onclick="filter(this.id, this.name)">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/boot.svg" width="25px"
@@ -168,7 +166,7 @@ session_start();
                                 <div class="subcategory ms-4" name="abbigliamento" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
                                         data-bs-toggle="list" id="patch" name="patch"
-                                        onclick="filter(this, this.name)">
+                                        onclick="filter(this.id, this.name)">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/patch.svg" width="25px"
@@ -183,7 +181,7 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list" id="protezioni"
-                                    name="protezioni" onclick="filter(this, this.name)">
+                                    name="protezioni" onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/soldier-protections.svg"
@@ -197,7 +195,7 @@ session_start();
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
                                         data-bs-toggle="list" id="occhiali-protettivi" name="occhiali protettivi"
-                                        onclick="filter(this, this.name)">
+                                        onclick="filter(this.id, this.name)">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/glasses.svg" width="25px"
@@ -212,7 +210,7 @@ session_start();
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
                                         data-bs-toggle="list" id="elmetti" name="elmetti"
-                                        onclick="filter(this, this.name)">
+                                        onclick="filter(this.id, this.name)">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/helmet.svg" width="25px"
@@ -226,7 +224,8 @@ session_start();
                                 </div>
                                 <div class="subcategory ms-4" name="protezioni" hidden>
                                     <a class="list-group-item list-group-item-action border-bottom-0"
-                                        data-bs-toggle="list" id="guanti" name="guanti" onclick="filter(this, this.name)">
+                                        data-bs-toggle="list" id="guanti" name="guanti"
+                                        onclick="filter(this.id, this.name)">
                                         <div class="d-flex align-items-center">
                                             <div class="circle me-3">
                                                 <img src="/mercatinodelsoftair/resurces/gloves.svg" width="25px"
@@ -241,7 +240,8 @@ session_start();
                             </div>
                             <div>
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
-                                    id="sistemi-puntamento" name="sistemi di puntamento" onclick="filter(this, this.name)">
+                                    id="sistemi-puntamento" name="sistemi di puntamento"
+                                    onclick="filter(this.id, this.name)">
                                     <div class="d-flex align-items-center">
                                         <div class="circle me-3">
                                             <img src="/mercatinodelsoftair/resurces/scope.svg" width="25px"
@@ -268,10 +268,10 @@ session_start();
                         $search_words_query .= '%' . $word;
                     }
                     $search_words_query .= '%"';
-                    $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
+                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
 
                     $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category);
+                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
                     $statement->execute();
 
                     while ($statement->fetch()) {
@@ -280,6 +280,10 @@ session_start();
                             $description = substr($description, 0, -(strlen($description) - $max_description_length));
                             $description .= '...';
                         }
+
+                        if($rows == 0){
+                            echo 'Annunci non trovati.';
+                        } else{
                         echo '
                         <div class="card m-3 rounded-4 listing-card">
                             <div class="row">
@@ -309,11 +313,12 @@ session_start();
                         </div>
                     ';
                     }
+                }
                 } else {
-                    $query = 'SELECT id, title, description, price, category FROM listings WHERE status="active"';
+                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active"';
 
                     $statement = $connect->prepare($query);
-                    $statement->bind_result($id, $title, $description, $price, $category);
+                    $statement->bind_result($id, $title, $description, $price, $category, $rows);
                     $statement->execute();
 
                     while ($statement->fetch()) {
@@ -322,6 +327,10 @@ session_start();
                             $description = substr($description, 0, -(strlen($description) - $max_description_length));
                             $description .= '...';
                         }
+
+                        if($rows == 0){
+                            echo 'Annunci non trovati.';
+                        } else{
                         echo '
                             <div class="card m-3 rounded-4 listing-card">
                                 <div class="row">
@@ -351,6 +360,7 @@ session_start();
                             </div>
                         ';
                     }
+                  }
                 }
                 ?>
             </div>
@@ -364,5 +374,8 @@ session_start();
 </body>
 <div id="footer"></div>
 <script src="/mercatinodelsoftair/templates/index_template.js"></script>
+<script>
+    expandOrCollapseCategory();
+</script>
 
 </html>
