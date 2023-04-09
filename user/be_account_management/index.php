@@ -5,7 +5,7 @@ session_start();
 <?php
 include('../../db_connect.php');
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = sha1($_POST['password'] );
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $telegram = $_POST['telegram'];
