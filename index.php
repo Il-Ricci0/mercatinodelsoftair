@@ -19,7 +19,8 @@ session_start();
     </a>
     <div class="form-inline d-flex">
         <input type="text" class="form-control rounded-end-0" name="search" id="search">
-        <button class="btn btn-primary rounded-start-0" onclick="search()"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn btn-primary rounded-start-0" onclick="search()"><i
+                class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
     </div>
     <?php
     if (!isset($_SESSION['logged_in'])) {
@@ -268,10 +269,10 @@ session_start();
                         $search_words_query .= '%' . $word;
                     }
                     $search_words_query .= '%"';
-                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
+                    $query = 'SELECT id, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active" AND title LIKE ' . $search_words_query . ') AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
 
                 } else {
-                    $query = 'SELECT id, title, description, price, category, COUNT(id) AS nrows FROM listings WHERE status="active"';
+                    $query = 'SELECT id, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active") AS nrows FROM listings WHERE status="active"';
                 }
                 if (isset($_GET["category"])) {
                     $category = htmlspecialchars($_GET["category"]);
@@ -287,13 +288,13 @@ session_start();
                         $description = substr($description, 0, -(strlen($description) - $max_description_length));
                         $description .= '...';
                     }
-
-                    if ($rows == 0) {
+                    if ($rows == null) {
                         echo '
                             <div class="d-flex align-items-center justify-content-center">
                             <text class="text-muted">Annunci non trovati.</text>
                             </div>
                             ';
+                            break;
                     } else {
                         echo '
                         <div class="card m-3 rounded-4 listing-card">
