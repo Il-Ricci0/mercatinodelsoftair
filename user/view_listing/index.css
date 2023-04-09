@@ -1,0 +1,45 @@
+.circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pfp {
+    height: 60px;
+    width: 60px;
+}
+
+#pfp:hover {
+    background-color: grey;
+    transition: 100ms;
+    cursor: pointer;
+}
+
+#categories {
+    width: 320px;
+    cursor: pointer;
+}
+
+.listing-image-box,
+.listing-image {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.listing-card {
+    padding: 25px;
+}
+
+.form-card {
+    width: fit-content;
+}
+
+#user-menu {
+    position: fixed;
+    right: 10;
+    top: 100;
+}
