@@ -8,7 +8,9 @@ $username = $_POST['username'];
 $password = sha1($_POST['password'] );
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
-$telegram = $_POST['telegram'];
+if (isset($_POST['telegram']) && $telegram != null) {
+    $telegram = 't.me/' . $_POST['telegram'];
+}
 
 $query = "SELECT * FROM users WHERE email = '" . $_SESSION["email"] . "' AND password = '$password'";
 $result = mysqli_query($connect, $query);

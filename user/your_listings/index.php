@@ -315,6 +315,9 @@ session_start();
                                             <div class="col-6">
                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">vedi</a>
                                             </div>
+                                            <div class="col-6">
+                                                <a class="btn btn-danger" role="button" href="/mercatinodelsoftair/user/be_delete_listing/index.php?id=' . $id . '">elimina</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

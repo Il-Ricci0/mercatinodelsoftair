@@ -10,7 +10,6 @@ session_start();
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/all.css">
-    </link>
 </head>
 
 <nav class="navbar bg-light p-2">
