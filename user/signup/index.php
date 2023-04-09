@@ -14,7 +14,7 @@
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <?php
-        echo '
+    echo '
             <div class="d-flex">
             <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signin/index.php">Accedi</a>
             </div>
@@ -37,6 +37,11 @@
                             required>
                         <input type="text" name="email" id="email" class="form-control my-2" placeholder="email"
                             required>
+                        <div class="input-group my-2">
+                            <span class="input-group-text" id="basic-addon1">t.me/</span>
+                            <input type="text" name="telegram" id="telegram" class="form-control"
+                                placeholder="telegram username">
+                        </div>
                         <input type="text" name="username" id="username" class="form-control my-2"
                             placeholder="username" required>
                         <input type="password" name="password" id="password" class="form-control my-2"

@@ -60,20 +60,20 @@ session_start();
             $current_id = htmlspecialchars($_GET["id"]);
             include('../../db_connect.php');
             $query = 'SELECT id, user, title, description, price, category FROM listings WHERE status="active" AND id=' . $current_id;
-            
+
             $statement = $connect->prepare($query);
             $statement->execute();
             $statement->store_result();
             $statement->bind_result($id, $user, $title, $description, $price, $category);
             $statement->fetch();
-            
+
             $query = 'SELECT telegram FROM users WHERE email=?';
             $statement = $connect->prepare($query);
             $statement->bind_param("s", $user);
             $statement->execute();
             $statement->bind_result($telegram);
             $statement->fetch();
-            
+
 
             echo '
             <div class="col-9">
@@ -100,7 +100,7 @@ session_start();
                 ';
             if (isset($telegram) && $telegram != null) {
                 echo '
-                    <a class="btn btn-primary" role="button" href="' . $telegram . '">contatta<i class="ms-2 fa-brands fa-telegram fa-xl"></i></a>
+                    <a class="btn btn-primary" role="button" href="https://' . $telegram . '">contatta<i class="ms-2 fa-brands fa-telegram fa-xl"></i></a>
                     ';
             } else {
                 echo '

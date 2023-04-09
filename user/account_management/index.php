@@ -71,6 +71,8 @@ echo'
                             required>
                         <input type="text" name="username" id="username" class="form-control my-2"
                             value="' . $_SESSION["username"] . '" required>
+                        <input type="text" name="telegram" id="telegram" class="form-control my-2"
+                        value="' . $_SESSION["telegram"] . '" required>
                         <input type="password" name="password" id="password" class="form-control my-2"
                             placeholder="Password" required>
                     </div>
