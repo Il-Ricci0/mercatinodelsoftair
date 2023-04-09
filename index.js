@@ -73,4 +73,3 @@ function search() {
         window.location.href = '/mercatinodelsoftair/index.php';
     }
 }
-

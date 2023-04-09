@@ -5,7 +5,7 @@ $username = $_POST['username'];
 $password = sha1($_POST['password']);
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
-if (isset($_POST['telegram']) && $telegram != null) {
+if (isset($_POST['telegram']) && $_POST['telegram'] != null) {
     $telegram = 't.me/' . $_POST['telegram'];
 }
 

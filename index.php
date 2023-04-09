@@ -260,6 +260,16 @@ session_start();
             <div class="col">
                 <?php
                 include('db_connect.php');
+                $statement = $connect->prepare("SELECT listing FROM favourites WHERE user=?");
+                $statement->bind_param("s", $_SESSION['email']);
+                $statement->bind_result($favourite);
+                $statement->execute();
+                $favourites = array();
+                while ($statement->fetch()) {
+                    array_push($favourites, $favourite);
+                }
+                $statement->close();
+
                 $query = '';
                 if (isset($_GET["search"])) {
                     $search = htmlspecialchars($_GET["search"]);
@@ -269,19 +279,18 @@ session_start();
                         $search_words_query .= '%' . $word;
                     }
                     $search_words_query .= '%"';
-                    $query = 'SELECT id, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active" AND title LIKE ' . $search_words_query . ') AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
+                    $query = 'SELECT id, user, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active" AND title LIKE ' . $search_words_query . ') AS nrows FROM listings WHERE status="active" AND title LIKE ' . $search_words_query;
 
                 } else {
-                    $query = 'SELECT id, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active") AS nrows FROM listings WHERE status="active"';
+                    $query = 'SELECT id, user, title, description, price, category, (SELECT COUNT(listings.id) FROM listings WHERE status="active") AS nrows FROM listings WHERE status="active"';
                 }
                 if (isset($_GET["category"])) {
                     $category = htmlspecialchars($_GET["category"]);
                     $query .= ' AND category="' . $category . '"';
                 }
                 $statement = $connect->prepare($query);
-                $statement->bind_result($id, $title, $description, $price, $category, $rows);
+                $statement->bind_result($id, $user, $title, $description, $price, $category, $rows);
                 $statement->execute();
-
                 while ($statement->fetch()) {
                     $max_description_length = 75;
                     if (strlen($description) >= $max_description_length) {
@@ -307,8 +316,17 @@ session_start();
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body py-0">
-                                        <div class="listing-content">
-                                            <h5 class="card-title">' . $title . '</h5>
+                                    <div class="listing-content">
+                                        <div class="d-flex justify-content-end">
+                        ';
+                        if (in_array($id, $favourites)) {
+                            echo '<a href="/mercatinodelsoftair/user/be_favourites/?action=unfavourite&listing=' . $id . '"><i class="fa-solid fa-bookmark" style="color: #0084ff;"></i></a>';
+                        } else {
+                            echo '<a href="/mercatinodelsoftair/user/be_favourites/?action=favourite&listing=' . $id . '"><i class="fa-regular fa-bookmark" style="color: #0084ff;"></i></a>';
+                        }
+                        echo '
+                                        </div>
+                                        <h5 class="card-title">' . $title . '</h5>
                                             <p class="card-text">' . $description . '</p>
                                         </div>
                                         <div class="row mt-2">

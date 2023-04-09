@@ -100,7 +100,7 @@ session_start();
                 ';
             if (isset($telegram) && $telegram != null) {
                 echo '
-                    <a class="btn btn-primary" role="button" href="'.$telegram.'">contatta<i class="ms-2 fa-brands fa-telegram fa-xl"></i></a>
+                    <a class="btn btn-primary" role="button" href="https://'.$telegram.'">contatta<i class="ms-2 fa-brands fa-telegram fa-xl"></i></a>
                     ';
             } else {
                 echo '
