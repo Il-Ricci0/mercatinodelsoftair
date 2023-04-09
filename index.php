@@ -34,6 +34,9 @@ session_start();
     } else {
         echo '
         <div class="d-flex align-items-center">
+        
+        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="/mercatinodelsoftair/user/new_club/index.php">Crea club</a>
+        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="/mercatinodelsoftair/user/signin/index.php">Unisciti a club</a>
             <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
             <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
             ' . $_SESSION["username"] . '

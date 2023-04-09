@@ -50,51 +50,32 @@ session_start();
 
 <body>
     <?php
-    include('../../db_connect.php');
-    $query = 'SELECT categories.name FROM categories';
-    $statement = $connect->prepare($query);
-    $statement->bind_result($category);
-    $statement->execute();
-
     if (!isset($_SESSION['logged_in'])) {
         echo '
         <!-- not signed-id or signed-up warning -->
         <div class="w-100 d-flex justify-content-center">
             <div class="card m-5 p-4 d-inline">
-                Ooops! per creare un annuncio <a href="/mercatinodelsoftair/user/signin/index.php">accedi</a> o <a href="/mercatinodelsoftair/user/signup/index.php">registrati</a>.
+                Ooops! per creare un club <a href="/mercatinodelsoftair/user/signin/index.php">accedi</a> o <a href="/mercatinodelsoftair/user/signup/index.php">registrati</a>.
             </div>
         </div>
         ';
     } else {
         echo '
-        <!-- create listing form -->
         <div class="w-100 d-flex justify-content-center">
             <div class="card form-card m-5 p-4">
-                <form action="/mercatinodelsoftair/user/be_listing/index.php" method="POST" class="form-horizontal">
-                    <div class="form-group">
-                        <input type="text" name="user" id="user" value="<?php $_SESSION[' . "logged_in" . '] ?>" hidden>
-                        <input type="text" name="category" id="category" value="test" hidden>
+                <form action="/mercatinodelsoftair/user/be_new_club/index.php" method="POST" class="form-horizontal">
                         <div class="form-group">
                             <h3>Creazione Annuncio</h3>
-                            <input type="text" name="title" id="listing-title" class="form-control my-2"
-                                placeholder="titolo annuncio" required>
-                            <input type="text" name="description" id="listing-description" class="form-control my-2"
+                            <input type="text" name="name" id="club-name" class="form-control my-2"
+                                placeholder="nome club" required>
+                            <input type="text" name="description" id="club-description" class="form-control my-2"
                                 placeholder="descrizione" required>
-                            <input type="number" name="price" id="listing-price" class="form-control my-2"
-                                placeholder="prezzo" required>
-                            <text class="text-muted">categoria</text>
-                            <select class="my-2 form-select form-select-sm" name="category">
-        ';
-        while ($statement->fetch()) {
-            echo '<option value="' . $category . '">' . $category . '</option>';
-        }
-        echo '
-                            </select>
-                        </div>
+                            <input type="region" name="region" id="club-region" class="form-control my-2"
+                                placeholder="regione" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
-                            Crea Annuncio
+                            Crea Club
                         </button>
                     </div>
                 </form>
