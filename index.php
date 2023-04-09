@@ -34,10 +34,9 @@ session_start();
     } else {
         echo '
         <div class="d-flex align-items-center">
-        
         <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="/mercatinodelsoftair/user/new_club/index.php">Crea club</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="/mercatinodelsoftair/user/signin/index.php">Unisciti a club</a>
-            <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
+        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="/mercatinodelsoftair/user/join_club/index.php">Unisciti a club</a>
+            <a class="btn btn-outline-secondary mx-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
             <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
             ' . $_SESSION["username"] . '
             </div>
@@ -63,9 +62,8 @@ session_start();
 <body>
     <div class="container">
         <div class="row">
-            <div class="col bg-secondary">
+            <div class="col">
                 <div class="sticky-top">
-                    FILTER.
                     <div class="card m-3 rounded-4 d-flex align-items-center">
                         <h5 class="text-muted">categorie:</h5>
                         <div class="list-group mx-3 mb-3" id="categories">
@@ -297,7 +295,7 @@ session_start();
                             <text class="text-muted">Annunci non trovati.</text>
                             </div>
                             ';
-                            break;
+                        break;
                     } else {
                         echo '
                         <div class="card m-3 rounded-4 listing-card">

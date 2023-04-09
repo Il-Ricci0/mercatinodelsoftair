@@ -55,7 +55,7 @@ session_start();
         <!-- not signed-id or signed-up warning -->
         <div class="w-100 d-flex justify-content-center">
             <div class="card m-5 p-4 d-inline">
-                Ooops! per creare un club <a href="/mercatinodelsoftair/user/signin/index.php">accedi</a> o <a href="/mercatinodelsoftair/user/signup/index.php">registrati</a>.
+                Ooops! per unirti ad un club <a href="/mercatinodelsoftair/user/signin/index.php">accedi</a> o <a href="/mercatinodelsoftair/user/signup/index.php">registrati</a>.
             </div>
         </div>
         ';
@@ -63,21 +63,17 @@ session_start();
         echo '
         <div class="w-100 d-flex justify-content-center">
             <div class="card form-card m-5 p-4">
-                <form action="/mercatinodelsoftair/user/be_new_club/index.php" method="POST" class="form-horizontal">
+                <form action="/mercatinodelsoftair/user/be_join_club/index.php" method="POST" class="form-horizontal">
                         <div class="form-group">
-                            <h3>Creazione Club</h3>
+                            <h3>Unisciti ad un Club</h3>
                             <input type="text" name="name" id="club-name" class="form-control my-2"
                                 placeholder="nome club" required>
-                            <input type="text" name="description" id="club-description" class="form-control my-2"
-                                placeholder="descrizione" required>
-                            <input type="text" name="region" id="club-region" class="form-control my-2"
-                                placeholder="regione" required>
-                                <input type="password" name="password" id="club-password" class="form-control my-2"
-                                    placeholder="password" required>
+                            <input type="password" name="password" id="club-password" class="form-control my-2"
+                                placeholder="password" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">
-                            Crea Club
+                            Unisciti
                         </button>
                     </div>
                 </form>

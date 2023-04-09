@@ -58,9 +58,8 @@ session_start();
 <body>
     <div class="container">
         <div class="row">
-        <div class="col bg-secondary">
+        <div class="col">
                 <div class="sticky-top">
-                    FILTER.
                     <div class="card m-3 rounded-4 d-flex align-items-center">
                         <h5 class="text-muted">categorie:</h5>
                         <div class="list-group mx-3 mb-3" id="categories">
