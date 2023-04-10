@@ -16,5 +16,9 @@ $statement->bind_param("si", $user, $listing);
 $statement->execute();
 
 if ($statement)
-    header("Location: /mercatinodelsoftair/index.php");
+    if (isset($_SESSION['previousURL'])) {
+        header("Location: " . $_SESSION['previousURL']);
+    } else {
+        header("Location: /mercatinodelsoftair/index.php");
+    }
 ?>

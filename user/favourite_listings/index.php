@@ -7,12 +7,13 @@ $_SESSION['previousURL'] = $url;
 <html>
 
 <head>
-    <script type="text/javascript" src="/mercatinodelsoftair/index.js"></script>
+    <script type="text/javascript" src="index.js"></script>
     <script type="text/javascript" src="/mercatinodelsoftair/vendor/bootstrap/bootstrap.js"></script>
     <link rel="stylesheet" href="/mercatinodelsoftair/index.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="/mercatinodelsoftair/vendor/fontawesome/css/all.css">
+    </link>
 </head>
 
 <nav class="navbar bg-light p-2">
@@ -36,12 +37,10 @@ $_SESSION['previousURL'] = $url;
     } else {
         echo '
         <div class="d-flex align-items-center">
-        <a class="btn btn-outline-primary rounded-end-0 ms-1" role="button" href="/mercatinodelsoftair/user/new_club/index.php">Crea club</a>
-        <a class="btn btn-outline-primary rounded-start-0 border-start-0" role="button" href="/mercatinodelsoftair/user/join_club/index.php">Unisciti a club</a>
-            <a class="btn btn-outline-secondary mx-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
-            <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
-            ' . $_SESSION["username"] . '
-            </div>
+        <a class="btn btn-outline-secondary me-2" role="button" href="/mercatinodelsoftair/user/create_listing/index.php">Crea annuncio</a>
+        <div class="circle" id="pfp" onclick="expandOrCollapseUserMenu()">
+        ' . $_SESSION["username"] . '
+        </div>
         </div>
         ';
     }
@@ -52,10 +51,8 @@ $_SESSION['previousURL'] = $url;
     <div>
         <a class="btn btn-light rounded-bottom-0 border-bottom-0 d-block" role="button"
             href="/mercatinodelsoftair/user/account_management/index.php">Impostazioni</a>
-        <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/your_listings/"
-            role="button">I tuoi
-            annunci</a>
-        <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/favourite_listings/" role="button">Annunci salvati</a>
+        <a class="btn btn-light rounded-0 d-block" href="#" role="button">I tuoi annunci</a>
+        <a class="btn btn-light rounded-0 d-block" href="#" role="button">Annunci salvati</a>
         <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
             href="/mercatinodelsoftair/user/be_logout/index.php" role="button" id="logout-button">Esci</a>
     </div>
@@ -262,7 +259,7 @@ $_SESSION['previousURL'] = $url;
             </div>
             <div class="col">
                 <?php
-                include('db_connect.php');
+                include('../../db_connect.php');
                 $statement = $connect->prepare("SELECT listing FROM favourites WHERE user=?");
                 $statement->bind_param("s", $_SESSION['email']);
                 $statement->bind_result($favourite);
@@ -302,49 +299,45 @@ $_SESSION['previousURL'] = $url;
                     }
                     if ($rows == null) {
                         echo '
-                            <div class="d-flex align-items-center justify-content-center">
-                            <text class="text-muted">Annunci non trovati.</text>
-                            </div>
-                            ';
+                             <div class="d-flex align-items-center justify-content-center">
+                             <text class="text-muted">Annunci non trovati.</text>
+                             </div>
+                             ';
                         break;
                     } else {
-                        echo '
-                        <div class="card m-3 rounded-4 listing-card">
-                            <div class="row">
-                                <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
-                                    <div class="card rounded-3 p-1 listing-image">
-                                        <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
-                                            class="img-fluid">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="card-body py-0">
-                                    <div class="listing-content">
-                                        <div class="d-flex justify-content-end">
-                        ';
                         if (in_array($id, $favourites)) {
-                            echo '<a href="/mercatinodelsoftair/user/be_favourites/?action=unfavourite&listing=' . $id . '"><i class="fa-solid fa-bookmark" style="color: #0084ff;"></i></a>';
-                        } else {
-                            echo '<a href="/mercatinodelsoftair/user/be_favourites/?action=favourite&listing=' . $id . '"><i class="fa-regular fa-bookmark" style="color: #0084ff;"></i></a>';
+                            echo '
+                         <div class="card m-3 rounded-4 listing-card">
+                             <div class="row">
+                                 <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
+                                     <div class="card rounded-3 p-1 listing-image">
+                                         <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
+                                             class="img-fluid">
+                                     </div>
+                                 </div>
+                                 <div class="col-6">
+                                     <div class="card-body py-0">
+                                     <div class="listing-content">
+                                         <div class="d-flex justify-content-end">
+                                            <a href="/mercatinodelsoftair/user/be_favourites/?action=unfavourite&listing=' . $id . '"><i class="fa-solid fa-bookmark" style="color: #0084ff;"></i></a>
+                                         </div>
+                                         <h5 class="card-title">' . $title . '</h5>
+                                             <p class="card-text">' . $description . '</p>
+                                         </div>
+                                         <div class="row mt-2">
+                                             <div class="col-6">
+                                                 <p class="card-text text-muted">' . $price . '$' . '</p>
+                                             </div>
+                                             <div class="col-6">
+                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">vedi</a>
+                                             </div>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     ';
                         }
-                        echo '
-                                        </div>
-                                        <h5 class="card-title">' . $title . '</h5>
-                                            <p class="card-text">' . $description . '</p>
-                                        </div>
-                                        <div class="row mt-2">
-                                            <div class="col-6">
-                                                <p class="card-text text-muted">' . $price . '$' . '</p>
-                                            </div>
-                                            <div class="col-6">
-                                                <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">vedi</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ';
                     }
                 }
                 ?>
