@@ -51,8 +51,10 @@ $_SESSION['previousURL'] = $url;
     <div>
         <a class="btn btn-light rounded-bottom-0 border-bottom-0 d-block" role="button"
             href="/mercatinodelsoftair/user/account_management/index.php">Impostazioni</a>
-        <a class="btn btn-light rounded-0 d-block" href="#" role="button">I tuoi annunci</a>
-        <a class="btn btn-light rounded-0 d-block" href="#" role="button">Annunci salvati</a>
+        <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/your_listings/" role="button">I tuoi
+            annunci</a>
+        <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/favourite_listings/"
+            role="button">Annunci salvati</a>
         <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
             href="/mercatinodelsoftair/user/be_logout/index.php" role="button" id="logout-button">Esci</a>
     </div>
@@ -326,7 +328,7 @@ $_SESSION['previousURL'] = $url;
                                          </div>
                                          <div class="row mt-2">
                                              <div class="col-6">
-                                                 <p class="card-text text-muted">' . $price . '$' . '</p>
+                                                 <p class="card-text text-muted">' . $price . '€' . '</p>
                                              </div>
                                              <div class="col-6">
                                                  <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/index.php?id=' . $id . '">vedi</a>
@@ -342,9 +344,8 @@ $_SESSION['previousURL'] = $url;
                 }
                 ?>
             </div>
-            <div class="col bg-secondary">
+            <div class="col">
                 <div class="sticky-top">
-                    ADVERTISEMENT.
                 </div>
             </div>
         </div>

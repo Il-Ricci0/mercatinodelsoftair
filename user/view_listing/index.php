@@ -94,7 +94,7 @@ session_start();
                                 <div class="row mt-2">
                                     <div class="col-6 d-flex">
                                         <h5 class="me-2">prezzo:</h5>
-                                        <p class="card-text text-muted">' . $price . '$' . '</p>
+                                        <p class="card-text text-muted">' . $price . '€' . '</p>
                                     </div>
                                     <div class="col-6 d-flex justify-content-end pe-5">
                 ';
@@ -117,9 +117,8 @@ session_start();
             </div>
             ';
             ?>
-            <div class="col-3 bg-secondary">
+            <div class="col-3">
                 <div class="sticky-top">
-                    ADVERTISEMENT.
                 </div>
             </div>
         </div>
