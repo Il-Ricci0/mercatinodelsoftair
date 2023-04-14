@@ -56,8 +56,8 @@ $_SESSION['previousURL'] = $url;
             annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/favourite_listings/"
             role="button">Annunci salvati</a>
-        <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
-            href="/mercatinodelsoftair/user/be_logout/" role="button" id="logout-button">Esci</a>
+        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="/mercatinodelsoftair/user/be_logout/"
+            role="button" id="logout-button">Esci</a>
     </div>
 </div>
 
@@ -319,8 +319,12 @@ $_SESSION['previousURL'] = $url;
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body py-0">
-                                    <div class="listing-content">
-                                        <div class="d-flex justify-content-end">
+                                        <div class="listing-content">
+                                            <div class="row">
+                                                <div class="col-11">
+                                                    <h5 class="card-title">' . $title . '</h5>
+                                                </div>
+                                                <div class="col-1 d-flex justify-content-end p-0">
                         ';
                         if (isset($_SESSION['logged_in'])) {
                             if (in_array($id, $favourites)) {
@@ -330,15 +334,15 @@ $_SESSION['previousURL'] = $url;
                             }
                         }
                         echo '
-                                        </div>
-                                        <h5 class="card-title">' . $title . '</h5>
+                                                </div>
+                                            </div>
                                             <p class="card-text">' . $description . '</p>
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-6">
                                                 <p class="card-text text-muted">' . $price . '€' . '</p>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-6 d-flex justify-content-end p-0">
                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/?id=' . $id . '">vedi</a>
                                             </div>
                                         </div>
