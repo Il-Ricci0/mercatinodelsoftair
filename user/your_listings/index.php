@@ -306,6 +306,9 @@ session_start();
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body py-0">
+                                        <div class="d-flex justify-content-end me-2">
+                                            <a class="btn btn-danger" role="button" href="/mercatinodelsoftair/user/be_delete_listing/?id=' . $id . '"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
+                                        </div>
                                         <div class="listing-content">
                                             <h5 class="card-title">' . $title . '</h5>
                                             <p class="card-text">' . $description . '</p>
@@ -316,9 +319,6 @@ session_start();
                                             </div>
                                             <div class="col-6">
                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/?id=' . $id . '">vedi</a>
-                                            </div>
-                                            <div class="col-6">
-                                                <a class="btn btn-danger" role="button" href="/mercatinodelsoftair/user/be_delete_listing/?id=' . $id . '">elimina</a>
                                             </div>
                                         </div>
                                     </div>

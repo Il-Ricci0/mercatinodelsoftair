@@ -21,10 +21,10 @@ session_start();
             <?php
             include('../db_connect.php');
 
-            $query = 'SELECT username, email FROM users';
-            $statement = $mysqli->prepare($query);
+            $query = 'SELECT username, email, status FROM users';
+            $statement = $connect->prepare($query);
             $statement->execute();
-            $statement->bind_result($username, $email);
+            $statement->bind_result($username, $email, $status);
 
             while($statement->fetch()){
                 echo '
@@ -37,14 +37,20 @@ session_start();
                         <text>'.$username.'</text>
                     </div>
                     <div class="vr"></div>
-                    <div class="mx-1 px-1 id-list">
+                    <div class="mx-1 px-1 email-list">
                         <text>'.$email.'</text>
                     </div>
                     <div class="vr"></div>
                     <div class="mx-1 px-1">
                         <text>Action:</text>
-                        <a class="text-danger" href="">ban</a>
-                        <a class="text-success" href="">unban</a>
+                ';
+                if($status == 'active'){
+                    echo '<a class="text-danger" href="/mercatinodelsoftair/admin/be_user_management/?ban='.$email.'">ban</a>';
+                }
+                else if($status == 'banned'){
+                    echo '<a class="text-success" href="/mercatinodelsoftair/admin/be_user_management/?unban='.$email.'">unban</a>';
+                }
+                echo '
                     </div>
                 </div>
                 ';
