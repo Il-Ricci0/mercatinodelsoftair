@@ -55,8 +55,8 @@ $_SESSION['previousURL'] = $url;
             annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/favourite_listings/"
             role="button">Annunci salvati</a>
-        <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
-            href="/mercatinodelsoftair/user/be_logout/" role="button" id="logout-button">Esci</a>
+        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="/mercatinodelsoftair/user/be_logout/"
+            role="button" id="logout-button">Esci</a>
     </div>
 </div>
 
@@ -309,36 +309,40 @@ $_SESSION['previousURL'] = $url;
                     } else {
                         if (in_array($id, $favourites)) {
                             echo '
-                         <div class="card m-3 rounded-4 listing-card">
-                             <div class="row">
-                                 <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
-                                     <div class="card rounded-3 p-1 listing-image">
-                                         <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
-                                             class="img-fluid">
-                                     </div>
-                                 </div>
-                                 <div class="col-6">
-                                     <div class="card-body py-0">
-                                     <div class="listing-content">
-                                         <div class="d-flex justify-content-end">
-                                            <a href="/mercatinodelsoftair/user/be_favourites/?action=unfavourite&listing=' . $id . '"><i class="fa-solid fa-bookmark" style="color: #0084ff;"></i></a>
-                                         </div>
-                                         <h5 class="card-title">' . $title . '</h5>
-                                             <p class="card-text">' . $description . '</p>
-                                         </div>
-                                         <div class="row mt-2">
-                                             <div class="col-6">
-                                                 <p class="card-text text-muted">' . $price . '€' . '</p>
-                                             </div>
-                                             <div class="col-6">
-                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/?id=' . $id . '">vedi</a>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     ';
+                                <div class="card m-3 rounded-4 listing-card">
+                                    <div class="row">
+                                        <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
+                                            <div class="card rounded-3 p-1 listing-image">
+                                                <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
+                                                    class="img-fluid">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="card-body py-0">
+                                                <div class="listing-content">
+                                                    <div class="row">
+                                                        <div class="col-11">
+                                                            <h5 class="card-title">' . $title . '</h5>
+                                                        </div>
+                                                        <div class="col-1 d-flex justify-content-end p-0">
+                                                            <a href="/mercatinodelsoftair/user/be_favourites/?action=unfavourite&listing=' . $id . '"><i class="fa-solid fa-bookmark" style="color: #0084ff;"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <p class="card-text">' . $description . '</p>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-6">
+                                                        <p class="card-text text-muted">' . $price . '€' . '</p>
+                                                    </div>
+                                                    <div class="col-6 d-flex justify-content-end p-0">
+                                                        <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/?id=' . $id . '">vedi</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ';
                         }
                     }
                 }
