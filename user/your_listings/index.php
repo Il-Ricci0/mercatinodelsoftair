@@ -52,15 +52,15 @@ session_start();
             annunci</a>
         <a class="btn btn-light rounded-0 d-block" href="/mercatinodelsoftair/user/favourite_listings/"
             role="button">Annunci salvati</a>
-        <a class="btn btn-danger rounded-top-0 border-top-0 d-block"
-            href="/mercatinodelsoftair/user/be_logout/" role="button" id="logout-button">Esci</a>
+        <a class="btn btn-danger rounded-top-0 border-top-0 d-block" href="/mercatinodelsoftair/user/be_logout/"
+            role="button" id="logout-button">Esci</a>
     </div>
 </div>
 
 <body>
     <div class="container">
         <div class="row">
-        <div class="col">
+            <div class="col">
                 <div class="sticky-top">
                     <div class="card m-3 rounded-4 d-flex align-items-center">
                         <h5 class="text-muted">categorie:</h5>
@@ -306,18 +306,22 @@ session_start();
                                 </div>
                                 <div class="col-6">
                                     <div class="card-body py-0">
-                                        <div class="d-flex justify-content-end me-2">
-                                            <a class="btn btn-danger" role="button" href="/mercatinodelsoftair/user/be_delete_listing/?id=' . $id . '"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
-                                        </div>
                                         <div class="listing-content">
-                                            <h5 class="card-title">' . $title . '</h5>
+                                            <div class="row">
+                                                <div class="col-9">
+                                                    <h5 class="card-title">' . $title . '</h5>
+                                                </div>
+                                                <div class="col-3">
+                                                    <a class="btn btn-danger" role="button" href="/mercatinodelsoftair/user/be_delete_listing/?id=' . $id . '"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></a>
+                                                </div>
+                                            </div>
                                             <p class="card-text">' . $description . '</p>
                                         </div>
                                         <div class="row mt-2">
                                             <div class="col-6">
                                                 <p class="card-text text-muted">' . $price . '€' . '</p>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-6 d-flex justify-content-end p-0">
                                                 <a class="btn btn-warning" role="button" href="/mercatinodelsoftair/user/view_listing/?id=' . $id . '">vedi</a>
                                             </div>
                                         </div>
@@ -343,4 +347,5 @@ session_start();
     updateSearchPlaceholder();
     expandOrCollapseCategory();
 </script>
+
 </html>
