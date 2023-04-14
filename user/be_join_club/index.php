@@ -32,7 +32,7 @@ if ($count != 1) {
     $statement->execute();
 
     if ($statement)
-        header("Location: /mercatinodelsoftair/index.php");
+        header("Location: /mercatinodelsoftair/");
     else
         echo "<h1>Joining to club failed. contact developers for assistance.</h1>";
     }else {

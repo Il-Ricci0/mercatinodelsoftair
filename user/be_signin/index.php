@@ -15,7 +15,7 @@ if ($count == 1) {
     $_SESSION['last_name'] = mysqli_fetch_assoc(mysqli_query($connect, $query))['last_name'];
     $_SESSION['email'] = $email;
     $_SESSION['telegram'] = mysqli_fetch_assoc(mysqli_query($connect, $query))['telegram'];
-    header("Location: /mercatinodelsoftair/index.php");
+    header("Location: /mercatinodelsoftair/");
 } else {
     echo "<h1>Signin failed. Invalid email or password.</h1>";
 }

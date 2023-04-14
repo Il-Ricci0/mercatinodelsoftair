@@ -28,7 +28,7 @@
         $statement->execute();
 
         if ($statement)
-            header("Location: /mercatinodelsoftair/index.php");
+            header("Location: /mercatinodelsoftair/");
         else
             echo "<h1>Club creation failed. contact developers for assistance.</h1>";
     } else {

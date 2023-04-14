@@ -17,7 +17,7 @@
     $statement->execute();
 
     if ($statement)
-        header("Location: /mercatinodelsoftair/user/your_listings/index.php");
+        header("Location: /mercatinodelsoftair/user/your_listings/");
     else
         echo "<h1>Delete listing failed. contact developers for assistance.</h1>";
     ?>

@@ -30,15 +30,15 @@ function filter(id, category) {
     let queryId = urlParams.get('id');
     let search = urlParams.get('search');
     if (queryId == id && search == null) {
-        window.location.href = '/mercatinodelsoftair/index.php';
+        window.location.href = '/mercatinodelsoftair/';
     }
     else if (queryId == id && search != null) {
-        window.location.href = '/mercatinodelsoftair/index.php?search=' + search;
+        window.location.href = '/mercatinodelsoftair/?search=' + search;
     }
     else if (search != null) {
-        window.location.href = '/mercatinodelsoftair/index.php?id=' + id + '&' + 'category=' + category + '&search=' + search;
+        window.location.href = '/mercatinodelsoftair/?id=' + id + '&' + 'category=' + category + '&search=' + search;
     } else {
-        window.location.href = '/mercatinodelsoftair/index.php?id=' + id + '&' + 'category=' + category;
+        window.location.href = '/mercatinodelsoftair/?id=' + id + '&' + 'category=' + category;
     }
 }
 
@@ -64,12 +64,12 @@ function search() {
     let id = urlParams.get('id');
     let category = urlParams.get('category');
     if (id != null && category != null && search != null) {
-        window.location.href = '/mercatinodelsoftair/index.php?id=' + id + '&' + 'category=' + category + '&search=' + search;
+        window.location.href = '/mercatinodelsoftair/?id=' + id + '&' + 'category=' + category + '&search=' + search;
     }
     else if (search != null) {
-        window.location.href = '/mercatinodelsoftair/index.php?search=' + search;
+        window.location.href = '/mercatinodelsoftair/?search=' + search;
     }
     else {
-        window.location.href = '/mercatinodelsoftair/index.php';
+        window.location.href = '/mercatinodelsoftair/';
     }
 }

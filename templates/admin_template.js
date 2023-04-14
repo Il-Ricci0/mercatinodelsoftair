@@ -3,7 +3,7 @@
 //html at page start
 document.getElementById("header").innerHTML =
     '<nav class="navbar bg-danger p-2">'
-    + '<a class="navbar-brand" href="/mercatinodelsoftair/index.php">'
+    + '<a class="navbar-brand" href="/mercatinodelsoftair/">'
     + '<img src="/mercatinodelsoftair/resurces/logo.svg" width="100">'
     + '</a>'
     + '<form class="form-inline d-flex">'

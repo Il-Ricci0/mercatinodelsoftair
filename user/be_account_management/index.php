@@ -25,7 +25,7 @@ if ($count == 1) {
     $_SESSION["last_name"] = $_POST['lastName'];
     $_SESSION["telegram"] = $_POST['telegram'];
     if ($result)
-        header("Location: /mercatinodelsoftair/index.php");
+        header("Location: /mercatinodelsoftair/");
     else
         echo "<h1>Modifiche non salvate.</h1>";
 } else

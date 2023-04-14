@@ -10,13 +10,13 @@
 </head>
 
 <nav class="navbar bg-light p-2">
-    <a class="navbar-brand" href="/mercatinodelsoftair/index.php">
+    <a class="navbar-brand" href="/mercatinodelsoftair/">
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
     <?php
         echo '
             <div class="d-flex">
-            <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signup/index.php">Registrati</a>
+            <a class="btn btn-outline-primary" role="button" href="/mercatinodelsoftair/user/signup/">Registrati</a>
             </div>
             ';
     ?>
@@ -25,7 +25,7 @@
 <body>
     <div class="w-100 d-flex justify-content-center">
         <div class="card form-card m-5 p-4">
-            <form action="/mercatinodelsoftair/user/be_signin/index.php" method="POST" class="form-horizontal">
+            <form action="/mercatinodelsoftair/user/be_signin/" method="POST" class="form-horizontal">
                 <div class="form-group">
                     <div class="mb-3">
                         <h3>Accedi</h3>

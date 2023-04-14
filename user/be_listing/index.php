@@ -15,7 +15,7 @@ $statement->bind_param("sssiss", $user, $title, $description, $price, $category,
 $statement->execute();
 
 if ($statement)
-    header("Location: /mercatinodelsoftair/index.php");
+    header("Location: /mercatinodelsoftair/");
 else
     echo "<h1>Listing creation failed. contact developers for assistance.</h1>";
 ?>

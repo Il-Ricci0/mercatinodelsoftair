@@ -19,6 +19,6 @@ if ($statement)
     if (isset($_SESSION['previousURL'])) {
         header("Location: " . $_SESSION['previousURL']);
     } else {
-        header("Location: /mercatinodelsoftair/index.php");
+        header("Location: /mercatinodelsoftair/");
     }
 ?>
