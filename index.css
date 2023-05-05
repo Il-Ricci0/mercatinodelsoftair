@@ -40,6 +40,7 @@
 }
 
 .form-card {
+    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -47,4 +48,18 @@
     position: fixed;
     right: 10;
     top: 100;
+}
+
+#categories-panel{
+    max-width: max-content;
+}
+
+#search-panel{
+    pointer-events: none;
+    width: 100%;
+    left: 0;
+}
+
+#search-line{
+    pointer-events: all;
 }

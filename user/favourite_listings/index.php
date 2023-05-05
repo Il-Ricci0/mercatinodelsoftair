@@ -20,10 +20,12 @@ $_SESSION['previousURL'] = $url;
     <a class="navbar-brand" href="/mercatinodelsoftair/">
         <img src="/mercatinodelsoftair/resurces/logo.svg" width="150">
     </a>
-    <div class="form-inline d-flex">
-        <input type="text" class="form-control rounded-end-0" name="search" id="search">
-        <button class="btn btn-primary rounded-start-0" onclick="search()"><i
-                class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+    <div class="position-absolute d-flex justify-content-center" id="search-panel">
+        <div class="form-inline d-flex w-25" id="search-line">
+            <input type="text" class="form-control rounded-end-0" placeholder="cerca qui tra i tuoi annunci" name="search" id="search">
+            <button class="btn btn-primary rounded-start-0 positio" onclick="search()"><i
+                    class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+        </div>
     </div>
     <?php
     if (!isset($_SESSION['logged_in'])) {
@@ -63,12 +65,12 @@ $_SESSION['previousURL'] = $url;
 <body>
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col" id="categories-panel">
                 <div class="sticky-top">
                     <div class="card m-3 rounded-4 d-flex align-items-center">
-                        <h5 class="text-muted">categorie:</h5>
-                        <div class="list-group mx-3 mb-3" id="categories">
-                            <div>
+                        <h5 class="text-muted mt-2">categorie:</h5>
+                        <div class="list-group mx-3 mb-3 border-top-0" id="categories">
+                            <div class="rounded-top-3">
                                 <a class="list-group-item list-group-item-action border-bottom-0" data-bs-toggle="list"
                                     id="fucili-bolt-action" name="fucili bolt action"
                                     onclick="filter(this.id, this.name)">
@@ -240,7 +242,7 @@ $_SESSION['previousURL'] = $url;
                                     </a>
                                 </div>
                             </div>
-                            <div>
+                            <div class="rounded-bottom-2">
                                 <a class="list-group-item list-group-item-action" data-bs-toggle="list"
                                     id="sistemi-puntamento" name="sistemi di puntamento"
                                     onclick="filter(this.id, this.name)">
