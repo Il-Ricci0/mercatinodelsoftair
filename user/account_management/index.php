@@ -65,16 +65,16 @@ echo'
                         <h3>Impostazioni Account</h3>
                     </div>
                     <div class="mb-3">
-                        <input type="text" name="firstName" id="firstName" class="form-control my-2" value="' . $_SESSION["first_name"] . '"
+                        <input type="text" name="firstName" id="firstName" class="form-control my-2" value="' . $_SESSION["first_name"] . '" placeholder="nome"
                             required>
-                        <input type="text" name="lastName" id="lastName" class="form-control my-2" value="' . $_SESSION["last_name"] . '"
+                        <input type="text" name="lastName" id="lastName" class="form-control my-2" value="' . $_SESSION["last_name"] . '" placeholder="cognome"
                             required>
                         <input type="text" name="username" id="username" class="form-control my-2"
-                            value="' . $_SESSION["username"] . '" required>
+                            value="' . $_SESSION["username"] . '" placeholder="username" required>
                         <input type="text" name="telegram" id="telegram" class="form-control my-2"
-                        value="' . $_SESSION["telegram"] . '" required>
+                        value="' . $_SESSION["telegram"] . '" placeholder="telegram @username"required>
                         <input type="password" name="password" id="password" class="form-control my-2"
-                            placeholder="Password" required>
+                            placeholder="password" required>
                     </div>
                 </div>
                 <div class="form-group">
