@@ -315,7 +315,7 @@ $_SESSION['previousURL'] = $url;
                             <div class="row">
                                 <div class="col-6 d-flex align-items-start justify-content-center listing-image-box">
                                     <div class="card rounded-3 p-1 listing-image">
-                                        <img src="https://mediacore.kyuubi.it/ilsemaforo/media/img/2020/7/17/159156-large-hk416-a5-v2-ral8000-cqb-full-metal-tan.jpg"
+                                        <img src="https://www.cera.org.au/wp-content/uploads/2021/06/placeholder-1-1.jpg"
                                             class="img-fluid">
                                     </div>
                                 </div>
